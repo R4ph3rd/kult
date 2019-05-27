@@ -1,0 +1,6 @@
+*,
+*:after,
+*:before {
+box-sizing: inherit;
+}
+/* pour avoir un modele de boite plus intuitif, à copiercoller à chaque fois */
