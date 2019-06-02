@@ -1,14 +1,9 @@
 <?php
-include("database.php");
-include('functions.php');
 
 $ev = mysqli_query($connect, "SELECT * FROM `evenements`");
 
-//echo '<h1>ev_cards</h1>';
-
 if( mysqli_num_rows($ev) > 0){
     while( $data = mysqli_fetch_array($ev)){
-        echo lien($data['event_titre']). '  ' ;
 
         echo'
             <article>
@@ -24,8 +19,6 @@ if( mysqli_num_rows($ev) > 0){
 
             </article>
         ';
-
-        echo publicAge($data['event_public']) ;
     }
 }
 

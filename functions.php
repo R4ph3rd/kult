@@ -11,7 +11,7 @@ function title($t){
 }
 
 function tagscard($tags){
-    $output = str_replace('&', ',', $tags);
+    $output = str_replace('&', ', ', $tags);
     return $output;
 }
 
@@ -30,6 +30,17 @@ function publicAge($p){
     elseif ($p == 3) $age = 18 ;
 
     return $age.' ans minimum' ;
+}
+
+function typeEvent($t){
+    if( $t == 0) return 'atelier' ;
+    elseif ($t == 1) return 'évènement' ;
+}
+
+function resume($r){
+    $l = strlen($r);
+    if($l > 300) return substr($c, 0, 300).'...';
+    else return $r;
 }
 
 
