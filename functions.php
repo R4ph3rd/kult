@@ -1,7 +1,7 @@
 <?php
 
 function lien($l){
-    $link = 'pages/fiches_events/'.str_replace(' ','',$l).'.php';
+    $link = str_replace(' ','+',$l);
     return $link;
 }
 
@@ -20,7 +20,7 @@ function datecard($d){
     return $dater[2].'/'.$dater[1];
 }
 
-function publics($p){
+function publicAge($p){
     if($p == 4){
         return 'tous publics' ;
     }
