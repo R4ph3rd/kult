@@ -1,3 +1,7 @@
+<?php 
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -10,6 +14,8 @@
 </head>
 <!--<link rel="icon" href="favicon.png" />-->
 <body>
+
+<?php include("ev_cards.php") ; ?>
 
 </body>
 </html>
