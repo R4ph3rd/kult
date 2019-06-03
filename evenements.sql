@@ -39,7 +39,7 @@ CREATE TABLE `evenements` (
   `event_tags` text NOT NULL,
   `event_prix` float NOT NULL,
   `event_description` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Déchargement des données de la table `evenements`
