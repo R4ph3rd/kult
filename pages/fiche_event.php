@@ -15,7 +15,7 @@ echo '<h2>'.$data['event_titre'].'</h2>' ;
 
 
 echo '
-    <div class="headerEvent">
+    <div class="header">
         <div class="banniere">
             <div>
                 //icons here (return, markup)
