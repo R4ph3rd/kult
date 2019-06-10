@@ -1,7 +1,7 @@
 <?php
 
 define("SQL_HOST","localhost");
-define("SQL_LOGIN","user");
+define("SQL_LOGIN","root");
 define("SQL_PASS","php");
 define("SQL_BASE","kult");
 

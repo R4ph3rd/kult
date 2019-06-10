@@ -1,6 +1,62 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap');
+
 *,
 *:after,
 *:before {
 box-sizing: inherit;
 }
-/* pour avoir un modele de boite plus intuitif, à copiercoller à chaque fois */
+
+@media(max-width:1000px){
+
+    html{
+        scrollbar-width: none; 
+    }
+
+    html::-webkit-scrollbar { 
+        display: none; 
+    }
+}
+
+.body{
+    font-family:'Lato';
+    color:var(--blak);
+}
+
+.svg{
+    width:24px;
+    height:24px;
+}
+
+a{
+    text-decoration: none;
+    font-family:'Lato'
+}
+
+h2{
+    color:var(--blak);
+}
+
+h3{
+    display:inline-block;
+    color:var(--blak);
+}
+
+label{
+    color:var(--blak);
+}
+
+p{
+    color:var(--blak);
+}
+
+input{
+    border:none;
+    border-radius:2px;
+}
+
+div{
+    border-radius:2px;
+}
+
+input:hover{ cursor: pointer }
+input + label:hover{ cursor: pointer}

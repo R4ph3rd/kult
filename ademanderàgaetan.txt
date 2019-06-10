@@ -1,0 +1,3 @@
+- enlever le margin bottom de la div pass (spécifié par une *)
+-détecter sur quelle page on est pour pouvoir faire des retours en arrière (car on peut arriver sur une même page par plusieurs chemins différents)
+-changer l'alfa sur le placeholder du deuxieme écran du formulaire

@@ -7,7 +7,7 @@ include('entete.php');
 
 
 //body
-echo' <a href="pages/createEvent.php">CREATION EVENEMENT</a>';
+echo' <a href="createEvent.php">CREATION EVENEMENT</a>';
 include("ev_cards.php") ; 
 include('artisteCards.php');
 include('newsCards.php');
