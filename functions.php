@@ -56,5 +56,12 @@ function titleCreate($t){
     if ($t == 9) return 'Parfait ! <br> Ton annonce sera publiée dans quelques instants.' ;
 }
 
+function dayPassed($jour, $mois){
+    
+    if ($jour < date('j') && $mois < date('n') && $mois > 4){
+        return 'class="passed"';
+    }
+}
+
 
 ?>

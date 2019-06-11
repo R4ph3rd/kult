@@ -2,7 +2,7 @@
     display:grid;
     justify-items:center;
     height: 94vh;
-    grid-template-rows: 24px 50px auto 50px auto  20px 6vh;
+    grid-template-rows: 24px 50px auto 50px 1fr  20px 6vh;
     grid-template-columns: auto 100% auto ;
     margin: 3vh 5vw;
 }
@@ -35,6 +35,7 @@ width:24px;
 #maingrid > form {
  /*   display:grid;
     justify-items:inherit;*/
+    width:100%;
     max-width:100%;
     grid-column: 2 / 2;
     grid-row: 5 ;
@@ -46,11 +47,14 @@ width:24px;
     width:100%;
     height:100%;
     justify-items:inherit;
-    justify-content:space-between;
 }
 
 @media(min-width:400px){
     #maingrid { grid-template-columns: auto 400px auto ;}
+}
+
+.organiser{
+  justify-content:space-between;
 }
 
 .flexbutton{
@@ -104,7 +108,7 @@ width:24px;
     margin:0
 }
 
-.buttonAppearance + label,p{
+.buttonAppearance + label{
     position: absolute;
     display:inline;
     z-index:4;
@@ -127,18 +131,53 @@ width:24px;
     color:var(--whit);
 }
 
+
+/* input text & placeholder, for all browsers */
+
 .textArea{
     justify-self:stretch;
     width:calc(100% - 5vw);
     height:50px;
     background-color:var(--whit);
-    color:var(--blak);
     padding-left:20px;
     cursor:text;
 }
 
+.textArea::-moz-placeholder{
+  color:var(--blak);
+  opacity:0.8;
+  font-weight:500;
+  font-size:1.2em;
+}
+
+.textArea:-moz-placeholder{
+  color:var(--blak);
+  opacity:0.8;
+  font-weight:500;
+  font-size:1.2em;
+}
+
+.textArea::-webkit-input-placeholder {
+  color:var(--blak);
+  opacity:0.8;
+  font-weight:500;
+  font-size:1.2em;
+}
+
+.textArea:-ms-input-placeholder {
+  color:var(--blak);
+  opacity:0.8;
+  font-weight:500;
+  font-size:1.2em;
+}
+
+
+/* skiping button */
 .pass{
-    grid-column: 1 / 3 ;
+    /*position:fixed;
+    bottom:3vh;
+    right:5vw;*/
+    grid-column: 2 / 3 ;
     grid-row: 7;
     justify-self:stretch;
     display:grid;
@@ -147,6 +186,9 @@ width:24px;
     grid-template-columns: auto;
     grid-template-rows: auto;
     margin-bottom:unset;
+    cursor: pointer;
+    background-color:#FFFFFF;
+    z-index:10;
 }
 
 .pass .svg{
@@ -158,14 +200,14 @@ width:24px;
 .goBack{ background-image:url('../assets/icons/arrow-left.svg') }
 
 
-.passButton a{
+.redButton a{
   font-weight:600;
   font-size:1.2em;
   color:var(--whit);
   line-height:1.2em;
 }
 
-.passButton{
+.redButton{
     background-color:var(--raid);
     justify-self:stretch;
     padding:15px 0;
@@ -202,7 +244,12 @@ width:24px;
   
     position: relative;
     font-size: var(--uiFieldFontSize);
-    padding-top: 1em;  
+    padding-top: 1em;
+    display: grid;
+    align-items:end;
+    justify-self:stretch;
+    align-self:stretch;
+
 }
   
   .field__input{ 
@@ -230,13 +277,6 @@ width:24px;
   LEVEL 2. CORE STYLES
   =====
   */
-  
-  .a-field{
-    display: inline-block;
-    justify-self:stretch;
-    align-self:end;
-    width: 100%
-  }
   
   .a-field__input{ 
     display: block;
@@ -348,6 +388,169 @@ width:24px;
   justify-self:stretch;
   align-self:stretch;
 }
+
+#tous > input{
+  grid-area: 1 / 1 / 5 / 3;
+  justify-self:stretch;
+  align-self:stretch;
+}
+
+.lieu > input {
+  margin-top:30px
+}
+
+.confirmation{
+  display:grid;
+  align-items:end;
+}
+
+.confirmation .redButton {
+  display:grid;
+  align-items:center;
+  justify-content:center;
+  text-transform:unset;
+  font-size:1.3em;
+  cursor:pointer;
+  padding:30px 0;
+}
+
+
+.date{
+  display:grid;
+  grid-template-rows: 28px auto 1fr;
+}
+
+.view{
+  display:flex;
+  justify-content: flex-end;
+}
+
+.view > * {
+  height:28px;
+  width:28px;
+  margin-left:20px;
+}
+
+.view > .list{ 
+  opacity:0.5;
+}
+
+.days{
+  display:grid;
+  grid-template-columns: repeat(7, auto);
+  justify-content: space-between;
+  justify-items:center;
+  font-size:1.2em;
+  font-weight:600;
+  margin:10px 0
+}
+
+.agenda{
+  overflow: hidden;
+  overflow-y:scroll;
+  scrollbar-width: none; 
+  -webkit-srollbar:none;
+}
+
+.agenda > h4{
+  font-size:1.4em;
+  margin:0 0 40px 0
+}
+
+.agenda > .numbers{
+  display:grid;
+  grid-template-columns: repeat(7, auto);
+  grid-template-rows: repeat(5, 1fr);
+  grid-row-gap:35px;
+  justify-content:space-between;
+
+  margin-bottom:40px;
+}
+
+.agenda > .numbers > p{
+  margin:0;
+  font-size:1.2em;
+  font-weight:600;
+}
+
+.passed{
+  opacity:0.5;
+}
+
+.heure{
+  display:grid;
+  align-items:center;
+  justify-items:center;
+  grid-template-rows: 70px 90px auto;
+  grid-template-columns:auto 80% auto;
+}
+
+.timer{
+  justify-self: stretch;
+  align-self: stretch;
+  position:relative;
+  grid-area: 2 / 2 / 3 /3;
+  display:grid;
+  background-color:#EFEFEF;
+  border-radius:45px;
+}
+
+.timer > input {
+  z-index:1;
+  border-radius:45px;
+  justify-self: center;
+  align-self: center;
+  background-color:#EFEFEF;
+  color:var(--gris);
+  font-family:'Lato';
+  font-weight:900;
+  font-size:3em;
+}
+
+.timer > select{
+  z-index:5;
+  justify-self: stretch;
+  align-self: stretch;
+  opacity:0;
+  /*top:0;
+  left:0;
+  width:100%;
+  height:100%;*/
+}
+
+.timer::after{
+  content: '';
+  position: absolute;
+  right: 15%;
+  top: calc(50% - 8px);
+  display: inline-block;
+  padding:5px;
+  border:solid var(--gris);
+  border-width: 0 4px 4px 0;
+  vertical-align: middle;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+}
+
+
+.timeList{
+  position:absolute;
+  width:100%;
+  height:100%;
+  text-align:center;
+  -webkit-appearance: menulist-button;
+  -moz-appearance: menulist-button;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
 
 
 

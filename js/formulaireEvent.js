@@ -6,38 +6,17 @@ $(document).ready(function(){
     let section = etapes[n]
 
     // au clic sur la flèche suivante, je change le titre, le lien du return, et je change quelle section est affichée
-    $('.pass a').click(function(){
-        //console.log('prout : ' + section)
-        $('header a').attr('href',section)
-
-        //console.log('new section : ' + section)
-        console.log($('#maingrid > h3').html())
-        
-        let out = n
-        n ++
-        section = etapes[n]
-
-        title(section)
-        newForm(n, out)
-
-        return false
-    })
+    if (n != 5){ 
+        $('.pass ').click(function(){
+            next()
+        })
+    }
 
 
     
-    $('#maingrid > #age > div > a').click(function(){
-
-        $(this).attr('href', section)
-
-        let out = n
-        n ++
-        section = etapes[n]
-
-        title(section)
-        newForm(n,out)
-        
-        return false
-    })
+    /*$('#maingrid > #age > div > a').click(function(){
+        next()
+    })*/
 
     $('.header a').click(function(){
         
@@ -51,13 +30,19 @@ $(document).ready(function(){
         return false
     })
 
-    $('.maingrid > #age > input, label').click(function(){
-        let out = n
-        n ++
-        section = etapes[n]
+    $('#maingrid > form > .age > *').delay(800).click(function(){
+        next()
+    })
 
-        title(section)
-        newForm(n, out)
+    $('#maingrid > form > .confirmation > *').click(function(){
+        console.log('la blanquette est boooonne')
+        next()
+    })
+
+    $('#maingrid > form > .heure > .timer > select > option').click(function(){
+        let value = $(this).attr('value')
+
+        $('#maingrid > form > .heure > .timer > input').attr('value', value)
     })
     
 })
@@ -93,22 +78,40 @@ function newForm(n, out){
         $('.pass .svg').addClass('notForm')
 
         $('.pass .button').removeClass('notForm')
-        $('.pass').addClass('passButton')
+        $('.pass').addClass('redButton')
 
         if(n == 3){
             $('.pass .button').html("J'ai déjà un lieu")
             $('.pass .button').css('text-transform','none')
         }
-        
-    } else if(n == 2){
+
+    } else if(n == 5){
 
         $('.pass .svg').addClass('notForm')
         $('.pass .button').addClass('notForm')
-        $('.pass').removeClass('passButton')
+        $('.pass').removeClass('redButton')
+        
         
     } else {
         $('.pass .svg').removeClass('notForm')
-        $('.pass').removeClass('passButton')
+        $('.pass').removeClass('redButton')
         $('.pass .button').addClass('notForm')
     }
+}
+
+
+function next(){
+
+    let out = n
+    n ++
+    section = etapes[n]
+
+    //$(this).attr('href', section)
+    title(section)
+    newForm(n, out)
+
+    console.log($('#maingrid > h3').html())
+    console.log(n)
+
+    return false
 }
