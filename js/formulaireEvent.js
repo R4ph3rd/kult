@@ -90,12 +90,31 @@ function newForm(n, out){
         $('.pass .svg').addClass('notForm')
         $('.pass .button').addClass('notForm')
         $('.pass').removeClass('redButton')
-        
-        
-    } else {
+
+    } else if(n == 6){
         $('.pass .svg').removeClass('notForm')
         $('.pass').removeClass('redButton')
         $('.pass .button').addClass('notForm')
+        $('.pass').addClass('passAgenda')
+          
+    } else if(n == 8){
+
+        $('.imageL').removeClass('notForm')
+        $('.imageL').css('display', 'intial')
+          
+    } else if(n == 9){
+
+        $('.imageL').html('Je suis vraiment trop fort')
+        $('.submit').removeClass('notForm')
+          
+    } else {
+
+        $('.pass .svg').removeClass('notForm')
+        $('.pass').removeClass('redButton')
+        $('.pass .button').addClass('notForm')
+        $('.imageL').addClass('notForm')
+        $('.passAgenda').removeClass('passAgenda')
+
     }
 }
 

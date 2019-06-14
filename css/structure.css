@@ -1,0 +1,36 @@
+.maingrid{
+    display:grid;
+    justify-items:left;
+    grid-template-rows: 24px repeat(4,auto);
+    grid-row-gap: 50px; 
+    margin: 3vh 5vw;
+}
+
+
+/* header buttons */
+
+.maingrid .header{
+  grid-column:1 / 3;
+  grid-row:1;
+  justify-self:start;
+  height:24px;
+  width:100%;
+  display:flex;
+  justify-content:flex-end;
+  align-content:baseline; 
+}
+
+.maingrid .header a {
+height:24px;
+width:24px; 
+margin-left:15px;
+}
+
+.menu{
+    margin-left:0;
+    justify-self:flex-start;
+    background-image:url('../assets/icons/menu.svg') 
+}
+.chat{background-image:url('../assets/icons/message-circle.svg') }
+.search{background-image:url('../assets/icons/search.svg') }
+.notifs{background-image:url('../assets/icons/bell.svg') }

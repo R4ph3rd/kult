@@ -21,34 +21,34 @@ echo '
         <section id="organiser" class="organiser">
         <div class="flexbutton big">
                 <div>
-                        <input type="radio" value="atelier" name="type_event" id="atelier" class="buttonAppearance">
+                        <input type="radio" value="0" name="type_event" id="atelier" class="buttonAppearance">
                         <label for="atelier" style="left:25%" >atelier</label>
                 </div>
                 <div>
-                    <input type="radio" value="évènement" name="type_event" id="évènement" class="buttonAppearance">
+                    <input type="radio" value="1" name="type_event" id="évènement" class="buttonAppearance">
                     <label for="évènement"   >évènement</label>
                 </div>
             </div>
 
             <div class="flexbutton ov-x">
                 <div>
-                    <input type="checkbox" value="débat" id="débat" class="buttonAppearance">
+                    <input type="checkbox" value="débat" name="tags" id="débat" class="buttonAppearance">
                     <label for="débat">débat</label>
                 </div>
                 <div>
-                    <input type="checkbox" value="théâtre" id="théâtre" class="buttonAppearance">
+                    <input type="checkbox" value="théâtre" name="tags" id="théâtre" class="buttonAppearance">
                     <label for="théâtre">théâtre</label>
                 </div>
                 <div>
-                    <input type="checkbox" value="humour" id="humour" class="buttonAppearance">
+                    <input type="checkbox" value="humour" name="tags" id="humour" class="buttonAppearance">
                     <label for="humour">humour</label>
                 </div>
                 <div>
-                    <input type="checkbox" value="improvisation" id="improvisation" class="buttonAppearance">
+                    <input type="checkbox" value="improvisation" name="tags" id="improvisation" class="buttonAppearance">
                     <label for="improvisation">impro</label>
                 </div>
                 <div>
-                    <input type="checkbox" value="stand-up" id="stand-up" class="buttonAppearance">
+                    <input type="checkbox" value="stand-up" name="tags" id="stand-up" class="buttonAppearance">
                     <label for="stand-up">stand-up</label>
                 </div>             
             </div>
@@ -74,35 +74,35 @@ echo '
 
                 <div id="b8">
                     
-                    <input type="radio" value="8" name="age" id="8" class="buttonAppearance">
+                    <input type="radio" value="0" name="age" id="8" class="buttonAppearance">
                     <label for="atelier"  >8 ans</label>
                     
                 </div>
 
                 <div id="b12">
                     
-                    <input type="radio" value="12" name="age" id="12" class="buttonAppearance">
+                    <input type="radio" value="1" name="age" id="12" class="buttonAppearance">
                     <label for="évènement" >12 ans</label>
                     
                 </div>
 
                 <div id="b16">
                     
-                    <input type="radio" value="16" name="age" id="16" class="buttonAppearance">
+                    <input type="radio" value="2" name="age" id="16" class="buttonAppearance">
                     <label for="évènement"   >16 ans</label>
                     
                 </div>
 
                 <div id="b18">
                     
-                    <input type="radio" value="18" name="age" id="18" class="buttonAppearance">
+                    <input type="radio" value="3" name="age" id="18" class="buttonAppearance">
                     <label for="évènement"   >18 ans</label>
                     
                 </div>
 
                 <div id="tous">
                     
-                    <input type="radio" value="tous" name="age" id="tous" class="buttonAppearance">
+                    <input type="radio" value="4" name="age" id="tous" class="buttonAppearance">
                     <label for="évènement"   >tous publics</label>
 
                 </div>
@@ -112,7 +112,7 @@ echo '
 
         <section id="lieu" class="notForm lieu">
 
-        <input type="text" class="textArea" name="name" placeholder="Entrer un lieu">
+        <input type="text" class="textArea" name="lieu" placeholder="Entrer un lieu">
         </section>
 
         <section id="salles" class="notForm salles">
@@ -200,7 +200,7 @@ echo '
         <section id="heure" class="notForm heure">
 
             <div class="timer">
-            <input type="time" class="" value="19:00">
+            <input type="time" class="" name="heure" value="19:00">
             <select name="time" class="timeList" id="timeselect">
         ';
 
@@ -219,15 +219,24 @@ echo '
         </section>
 
         <section id="image" class="notForm image">
+
+            <div class="redButton">         
+                <input type="file" class="buttonAppearance upload">
+                <label>
+                    <img src="../assets/icons/upload.svg" >
+                    <p>Uploader une image</p>
+                </label>
+            </div>
         </section>
 
         <section id="end" class="notForm end">
         </section>
 
-            <input type="submit" name="submit" class="notForm" value="Submit">
+            <input type="submit" name="submit" class="notForm submit" value="Submit">
         </form>
 
         <div class="pass">     
+            <a href="#end" class="  imageL notForm"> Vous le ferez très bien à ma place </a>
             <a href="#description" class="svg next"></a>      
             <a href="#age" class="button notForm">confirmer</a>   
         </div>

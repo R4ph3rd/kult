@@ -28,7 +28,7 @@ function publicAge($p){
     elseif ($p == 1) $age = 12 ;
     elseif ($p == 2) $age = 16 ;
     elseif ($p == 3) $age = 18 ;
-
+ 
     return $age.' ans minimum' ;
 }
 
