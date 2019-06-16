@@ -2,6 +2,7 @@
     display:grid;
     justify-items:left;
     grid-template-rows: 24px repeat(4,auto);
+    grid-template-columns:90vw;
     grid-row-gap: 50px; 
     margin: 3vh 5vw;
 }
@@ -16,21 +17,48 @@
   height:24px;
   width:100%;
   display:flex;
-  justify-content:flex-end;
-  align-content:baseline; 
+  justify-content: space-between;
+  align-items: center;
 }
 
 .maingrid .header a {
 height:24px;
-width:24px; 
-margin-left:15px;
+width:24px;
 }
 
-.menu{
-    margin-left:0;
-    justify-self:flex-start;
-    background-image:url('../assets/icons/menu.svg') 
+.maingrid .header > div{
+    display:grid;
+    grid-template-columns:24px 24px 24px;
+    grid-template-rows:24px;
+    grid-column-gap:15px;
 }
+
+.menu{background-image:url('../assets/icons/menu.svg') }
 .chat{background-image:url('../assets/icons/message-circle.svg') }
 .search{background-image:url('../assets/icons/search.svg') }
 .notifs{background-image:url('../assets/icons/bell.svg') }
+
+
+.maingrid > section > h2{
+    margin:0 0 20px 0;
+}
+
+.maingrid > section{
+    width:95vw;
+}
+
+#events{
+    grid-row:2/3;
+}
+
+#affiche{
+    grid-row:3/4;
+}
+
+#artistes{
+    grid-row:4/5;
+}
+
+#news{
+    grid-row:5/6;
+}

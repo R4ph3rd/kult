@@ -1,0 +1,11 @@
+*,
+*:after,
+*:before {
+box-sizing: inherit;
+}
+/* pour avoir un modele de boite plus intuitif, à copiercoller à chaque fois */
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap');
+
+a{
+    text-decoration: none;
+}

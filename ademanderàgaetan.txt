@@ -1,3 +1,5 @@
 - détecter sur quelle page on est pour pouvoir faire des retours en arrière (car on peut arriver sur une même page par plusieurs chemins différents)
 - agenda
 -vérifier existence d'une image en php et en importer une 
+
+-clipper le texte avec trois petits points

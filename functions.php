@@ -64,4 +64,14 @@ function dayPassed($jour, $mois){
 }
 
 
+function afficheClass($n){
+    if ($n == 0) return 'displayed';
+    else return 'hidden';
+}
+
+function readen($n){
+    if($n == 0) return 'nonRead';
+    else return ;
+}
+
 ?>

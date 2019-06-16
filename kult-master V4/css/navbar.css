@@ -1,0 +1,54 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    height: 850px;
+    background-color: #202730;
+}
+
+li a {
+    display: block;
+    color: #EDEEED;
+    padding: 8px 16px;
+    text-decoration: none;
+    font-family: 'Lato', sans-serif;
+    padding: 20px;
+}
+
+/* Change the link color on hover */
+li a:hover {
+    background-color: rgb(114, 114, 114);
+    color: #EDEEED;
+}
+#partun{
+    display: flex;
+    flex-direction: column;
+}
+
+#notif{
+    background-color:  #202730;
+    width: 200px;
+    display: flex;
+    flex-direction: row;
+}
+
+#infos{
+ margin-left: 130px;
+ margin-top: 5px;
+}
+
+
+#notifimg{
+    margin-left: 5px;
+    margin-top: 5px;
+}
+ #profil{
+     width: 200px;
+     align-content: center;
+     background-color:  #202730; 
+ }
+
+ #imgprofil{
+    margin-left: 25px;
+ }

@@ -2,7 +2,6 @@ let etapes = ['organiser', 'description', 'age', 'lieu', 'salles', 'confirmation
 let n = 0
 
 $(document).ready(function(){
-
     let section = etapes[n]
 
     // au clic sur la flèche suivante, je change le titre, le lien du return, et je change quelle section est affichée
@@ -134,3 +133,8 @@ function next(){
 
     return false
 }
+
+
+function goBack() {
+    window.history.back();
+  }

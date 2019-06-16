@@ -1,7 +1,7 @@
 .events {
     display:grid;
     grid-auto-columns:200px;
-    grid-template-rows:250px;
+    grid-template-rows:260px;
     grid-column-gap: 40px;
     grid-auto-flow:column;
 
@@ -14,10 +14,11 @@
     position:relative;
     display:grid;
     grid-template-rows:55% 45%;
-    box-shadow: 1px 3px 12px rgba(0,0,0,0.15);
+    box-shadow: 8px 3px 12px rgba(0,0,0,0.3);
     border-radius: 4px;
-   /* width:200px;
-    height:250px;*/
+    height: calc(100% - 10px);
+    /* width:200px;
+        height:250px;*/
 }
 
 .events > article > a {
@@ -50,6 +51,7 @@
     background-color: var(--whit);
     padding: 10px 20px;
     border-radius: 0 0 4px 4px;
+   /* box-shadow:0 4px 4px black; */
 }
 
 .events .infos > h4{
@@ -63,9 +65,179 @@
     font-weight:500;
     font-size:0.99em;
     margin:0 0 10px 0;
+
+    text-transform:capitalize;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .events .infos > p:last-child{
-    display:none;
+    color:var(--raid);
     margin:0
+}
+
+
+
+/* events mis à l'affiche */
+
+#affiche{
+    width:100%
+}
+
+.displayed{
+    display:grid !important;
+    opacity:1 !important;
+}
+
+.displayed > * {
+    transform: translateX(0px);
+    opacity:1;
+}
+
+.hidden{
+    display:none;
+    opacity:0;
+}
+
+.hidden > *{
+    transform:translateX(50px);
+    opacity:0;
+}
+
+.enAvant{
+    display:grid;
+    grid-template-rows:25vh;
+    grid-template-columns:100%;
+    grid-auto-flow:column;
+    margin-bottom:20px;
+    width:100%
+}
+
+.enAvant article{
+    position:relative;
+    height:100%;
+    box-shadow: 5px 3px 12px rgba(0,0,0,0.3);
+}
+
+.enAvant > article > a {
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    opacity:0;
+    cursor:pointer;
+    background:linear-gradient(135deg, rgb(20,20,20,0) 0%, rgb(20,20,20,0.1) 80%, rgb(20,20,20,0.2) 100%);
+}
+
+
+
+.enAvant > article > .infos {
+    position:absolute;
+    bottom:10px;
+    right:20px;
+    border-radius: 0 0 4px 4px;
+}
+  
+  .enAvant .infos > h4{
+      font-weight:800;
+      font-size:1.05em;
+      color:white;
+      text-transform:uppercase;
+      margin:0 0 10px 0;
+      text-align:right;
+  }
+  
+  .enAvant .infos > p{
+      font-weight:500;
+      font-size:0.99em;
+      color:white;
+      margin:0 0 10px 0;
+      text-align:right;
+      text-transform:capitalize;
+  }
+  
+  .enAvant .infos > p:last-child{
+      margin:0
+  }
+
+  #affiche > .carrousel{
+      display:grid;
+      width:100%;
+      grid-template-columns:repeat(5,10px);
+      grid-column-gap:15px;
+      justify-content: center;
+  }
+
+  .carrousel > svg{
+      color:var(--blak);
+      opacity:0.15;
+      cursor:pointer;
+      transition:0.5s;
+  }
+
+
+  /* ARTISTES */
+
+  #card_artiste{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Lato', sans-serif;
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 2px 2px 12px rgba(0,0,0,0.3);
+    height:calc(100% - 10px);
+}
+
+#card_artiste a {
+    width: 100%;
+    height: 100%; 
+    text-decoration: none; color: black;
+    text-align: center;
+
+}
+
+#card_artiste a .img{
+    height: 60%;
+    width: 100%;
+    overflow: hidden;
+    object-fit: cover;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+        
+}
+
+#card_artistes a .img img{
+    object-fit:cover;
+    width:100%;
+    width:100%;
+    overflow:hidden;
+}
+
+#card_artiste {
+    background-color: #EDEEED;
+    border-radius:4px;
+}
+
+.artistes_enavant{
+    display:grid;
+    grid-auto-columns:170px;
+    grid-template-rows:250px;
+    grid-column-gap: 40px;
+    grid-auto-flow:column;
+
+    overflow-x:scroll;
+  scrollbar-width: none; 
+  -webkit-srollbar:none;
+}
+
+#card_artiste p{
+    margin:0;
+    color:var(--raid)
+}
+
+#card_artiste h4{
+    margin-bottom:15px
 }

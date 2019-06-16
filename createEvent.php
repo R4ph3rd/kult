@@ -10,7 +10,7 @@ echo '
     <div id="maingrid">
 
         <div class="header">
-            <a href="" class="goBack svg">
+            <a href="" onclick="goBack()" class="goBack svg">
             </a>
         </div>
     
