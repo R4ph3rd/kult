@@ -3,6 +3,7 @@
 }*/
 
 #menu{
+    font-family:'Roboto';
     position:fixed;
     top:0;
     left:0;
@@ -10,10 +11,20 @@
     height:100vh;
     z-index:999999999999999; /* soyons certains ! */
     /*display:grid;*/
-    grid-template-rows:repeat(5,1fr);
+    grid-template-rows:20vh auto 15vh;
     grid-template-columns:100vw;
+    grid-row-gap:50px;
+    justify-items:center;
     display:none;
+    background-color:white;
  
+}
+
+#menu > img{
+    margin-top:5vh;
+    width:80%;
+    height:100%;
+    object-fit:scale-down;
 }
 
 #menu > div{
@@ -27,26 +38,64 @@
     height:0px;
 }
 
-#menu > div > a{
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
+#menu > #liens{
+    width:80%;
+    justify-items:start;
+    display:grid;
+    align-content:center;
+    justify-items:stretch;
+    grid-row-gap:25px;
 }
 
-#menu > div > p{
-    font-size:12vw;
+#menu > #liens > div{
+    position:relative;
+}
+
+#menu > #liens > div:hover::after{
+    position:absolute;
+    bottom:0;
+    right:0;
+    content:'';
+    width:6px;
+    height:2em;
+    top:0;
+    right:0;
+    background-color:var(--raid)
+}
+
+#menu > #liens > div > a{
+    display:inline;
+    width:100%;
+    text-align:left;
+    text-transform:lowercase;   
+    font-size:1.8em;
+    font-family:'Roboto';
     font-weight:900;
-    color:var(--whit);
+    color:var(--blak);
     cursor:pointer;
+
 
     opacity:0;
     transform: translateX(-50px);
 }
 
-#home{ background-color:var(--raid) }
-#mesEvents{ background-color:#7C1414  }
-#creerEvent{ background-color:#4E1B1B }
-#monAgenda{ background-color:#3C1616 }
-#monProfil{ background-color:var(--blak) }
+
+
+#menu > #socials{
+    display:grid;
+    grid-template-rows: auto auto ;
+    justify-items:center;
+}
+
+#menu > #socials > div{
+    width:50%;
+    display:flex;
+    justify-content:space-between;
+}
+
+#menu > #socials > p{
+    margin:0 0 20px 0;
+    text-align:center;
+    font-size:0.85em;
+    font-weight:500;
+}

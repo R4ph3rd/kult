@@ -51,6 +51,9 @@
     background-color: var(--whit);
     padding: 10px 20px;
     border-radius: 0 0 4px 4px;
+    display:grid;
+    grid-template-rows: 2.2em 0.99em auto;
+    grid-row-gap:10px;
    /* box-shadow:0 4px 4px black; */
 }
 
@@ -58,23 +61,24 @@
     font-weight:800;
     font-size:1.05em;
     text-transform:uppercase;
-    margin:0 0 10px 0;
+    margin:0;
 }
 
 .events .infos > p{
+    font-family:'Roboto';
     font-weight:500;
     font-size:0.99em;
-    margin:0 0 10px 0;
 
     text-transform:capitalize;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
+    margin:0;
 }
 
 .events .infos > p:last-child{
     color:var(--raid);
-    margin:0
+    font-weight:500;
 }
 
 

@@ -74,4 +74,18 @@ function readen($n){
     else return ;
 }
 
+
+function parser($r, $where){
+    $l = strlen($r) ;
+
+    if($where == 'msg'){
+        if($l > 70) return substr($r, 0, 70).' ...';
+        else return $r;
+    } 
+
+    if($where == 'resume'){
+        if($l > 250) return substr($r, 0, 250).' ...';
+        else return $r;
+    } 
+}
 ?>

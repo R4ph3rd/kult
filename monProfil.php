@@ -9,7 +9,7 @@ include('pages/menu.php');
 //body
 include('pages/corps.php');
 
-echo '<section id="msg">
+echo '<section id="profil">
             <h2>Mon profil</h2>';
 
 include('pages/profil.php');

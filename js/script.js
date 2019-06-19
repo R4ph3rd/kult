@@ -7,9 +7,9 @@ $(document).ready(function(){
 
     tl.staggerTo('#menu', 0, {display:'grid'}, 0)
     tl.staggerTo('#menu div', 0.2, {opacity:1, height:'100%'}, 0.08)
-    tl.staggerTo('#menu  div  p', 0.1, {opacity:1, x:0}, 0.1)
+    tl.staggerTo('#menu > #liens > div > a', 0.1, {opacity:1, x:0}, 0.1)
 
-    tlInverse.staggerTo('#menu  div  p', 0.3, {opacity:0}, 0.1)
+    tlInverse.staggerTo('#menu > #liens > div > a', 0.3, {opacity:0}, 0.1)
     tlInverse.staggerTo('#menu div', 0.1, {opacity:0, height:0}, 0.1)
     tlInverse.to('#menu', 0.3, {display:'none'}, 0.7)
 

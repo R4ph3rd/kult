@@ -17,7 +17,7 @@ if( mysqli_num_rows($a) > 0){
 
                         <div>
                             <h4>'.$data['msg_username'].'</h4>
-                            <p>'.$data['msg_content'].'</p>
+                            <p>'.parser($data['msg_content'], 'msg').'</p>
                         </div>
                         <p>'.datecard($data['msg_date']).'</p>
                 
