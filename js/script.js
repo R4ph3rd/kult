@@ -6,8 +6,7 @@ $(document).ready(function(){
     let tlInverse = new TimelineMax({paused:true})
 
     tl.staggerTo('#menu', 0, {display:'grid'}, 0)
-    tl.staggerTo('#menu div', 0.2, {opacity:1, height:'100%'}, 0.08)
-    tl.staggerTo('#menu > #liens > div > a', 0.1, {opacity:1, x:0}, 0.1)
+    tl.staggerTo('#menu > #liens > div > a', 0.1, {opacity:1, transform:'translateX(0)'}, 0.05)
 
     tlInverse.staggerTo('#menu > #liens > div > a', 0.3, {opacity:0}, 0.1)
     tlInverse.staggerTo('#menu div', 0.1, {opacity:0, height:0}, 0.1)
@@ -39,9 +38,57 @@ $(document).ready(function(){
         $('#affiche > .enAvant > .displayed').switchClass('displayed', 'hidden', 500, 'easeInSine')
         $('#affiche > .enAvant > #' + selected).switchClass('hidden','displayed',  500, 'easeInSine')
     })
+
+
+       //  append values in input fields
+    $('a[data-role=update]').click(function(){
+
+        var id  = this.getAttribute('class').split(" ")
+        let event_fav
+
+        for(let i = 0 ; i< id.length ; i++){
+            if(id[i]=="isFavorite"){
+                event_fav = 0
+                $(this).removeClass('isFavorite')
+            }
+            else {
+                event_fav = 1
+                $(this).addClass('isFavorite')
+            }
+            console.log(event_fav)
+        }
+
+        $('#event_fav').val(event_fav);
+    });
+
+  // now create event to get data from fields and update in database 
+
+   $('#save').click(function(){
+     var id  = $('#userId').val(); 
+     var event_fav =  $('#event_fav').attr('class')
+
+     console.log(event_fav)
+
+      $.ajax({
+          url      : 'connection.php',
+          method   : 'post', 
+          data     : { event_fav : event_fav, id : id },
+          success  : function(response){
+                        // now update user record in table 
+                        $('#event_fav').val(event_fav);
+
+                     }
+      });
+   });
     
     
     $( function() {
         $( "#datepicker" ).datepicker();
       } );
 })
+
+
+
+function goBack() {
+    window.history.back();
+}

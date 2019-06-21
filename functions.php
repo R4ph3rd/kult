@@ -88,4 +88,10 @@ function parser($r, $where){
         else return $r;
     } 
 }
+
+function mesFav($f){
+    if($f == 1){ 
+        return 'isFavorite';
+    } else return '';
+}
 ?>

@@ -14,8 +14,8 @@ if( mysqli_num_rows($n) > 0){
                     <img src="'.$dataNews['news_img'].'" alt="'.$dataNews['news_img'].' photo">
                 </div>
 
-                <h4>'.$dataNews['news_title'].'</h4>
-                <p>'.resume($dataNews['news_resume']).'</p>
+                <h4>'.utf8_encode($dataNews['news_title']).'</h4>
+                <p>'.utf8_encode(resume($dataNews['news_resume'])).'</p>
 
             </article>
         ';

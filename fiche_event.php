@@ -1,62 +1,217 @@
 <?php
 session_start();
-include("../database.php");
-include('../functions.php');
+include("database.php");
+include('functions.php');
 include('entete.php');
+include('connection.php');
 
 $title_event = $_GET['title_event'];//$_GET['title_event'];
 $ev = mysqli_query($connect, "SELECT * FROM `evenements` WHERE event_titre = '$title_event' LIMIT 1 ");
 $data = mysqli_fetch_assoc($ev) ;
 
 
-echo '<h1>event selectionné :</h1>' ;
-echo '<h2>'.$data['event_titre'].'</h2>' ;
+
+echo '<div class="maingrid ficheEvent">
 
 
 
-echo '
-    <div class="header">
-        <div class="banniere">
-            <div>
-                //icons here (return, markup)
-            </div>
-            <img src="" alt=""> // ou utiliser background-img en css, à voir le plus pratique
+        <div class="header">
+            <img src="'. $data['event_image'] .'" alt="">
+            <a href="#" onclick="goBack()" class="goBackWhite svg"></a>
+            <a href="#" id="event_fav" data-role="update" data-id=" $data[event_id]" class="favoris svg '.mesFav($data['event_fav']).'"></a>
         </div>
 
-        <img src="" alt=""> //event img here
-        <h2>'. $data['event_titre'] .'</h2> //numéro de h à voir 
-        <p>'. typeEvent($data['event_type']) .'</p>
-    </div>
+        <div class="top">
+            <div><img src="'. $data['event_image'] .'" alt=""></div>
+            <h2>'. $data['event_titre'] .'</h2>
+            <p>'. typeEvent($data['event_type']) .'</p>
+        </div>
 
-    <div id="maingrid">
+
+
 
         <section class="gridinfos">
-            svg //icon here
+            <div>
+            <img src="./assets/icons/calendar.svg" alt="">
             <p>'. datecard($data['event_date']) .'</p>
-            svg //icon here
+            </div>
+            
+            <div>
+            <img src="./assets/icons/hour.svg" alt="">
             <p>'. $data['event_heure'] .'</p>
-            svg //icon here
+            </div>
+
+            <div>
+            <img src="./assets/icons/location.svg" alt="">
             <p>'. $data['event_lieu'] .'</p>
-            svg //icon here
+            </div>
+
+            <div>
+            <img src="./assets/icons/age.svg" alt="">
             <p>'. publicAge($data['event_public']) .'</p>
-            svg //icon here
+            </div>';
+
+        if($data['event_type'] == 1){
+
+            echo'
+            <div>
+            <img src="./assets/icons/participants.svg" alt="">
+            <p>12 / 15</p>
+            </div>
+            ';
+
+        } elseif($data['event_type'] == 1) {
+            echo'
+            
+            <div>
+            <img src="./assets/icons/orga.svg" alt="">
             <p>'. $data['event_organisateur'] .'</p>
-            svg //icon here
+            </div>
+
+            <div>
+            <img src="./assets/icons/tags.svg" alt="">
             <p>'. tagscard($data['event_tags']) .'</p>
+            </div>
+            ';
+        }
+
+echo'
         </section>
 
-        <section id="desc">
+        <section id="desc" >
             <p>'. $data['event_description'] .'</p>
         </section>
 
-        <section id="questions">
-            
+        <section id="questions" class="community">
+        <h3>Des questions ?</h3>
+
+        <div>
+            <div class="userProfil">
+                <img src="./assets/users/hubert.jpg" alt="">
+            </div>
+            <h4>Hubert Bonisseur</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur ?</p>
+        
+            <div class="rep">
+                <div class="orga">
+                    <img  src="./assets/users/jeanne.jpg" alt="">
+                </div>
+                <p>1 réponse</p>
+                <img class="chevron" src="./assets/icons/chevron.svg" alt="">
+            </div>
+        
+        </div>  
+        
+        <div>
+            <div class="userProfil">
+                <img src="./assets/users/Gene.jpg" alt="">
+            </div>
+            <h4>Gene Guissepe</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur ?</p>
+        
+            <div class="rep">
+                <div class="orga">
+                    <img src="./assets/users/jeanne.jpg" alt="">
+                </div>
+                <p>2 réponses</p>
+                <img src="./assets/icons/chevron.svg" alt="">
+            </div>
+        
+        </div>  
+        
+        <div>
+            <div class="userProfil">
+                <img src="./assets/users/joe.jpg" alt="">
+            </div>
+            <h4>Joe Derret</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur ?</p>
+        
+            <div class="rep">
+            <div class="orga"><img  src="./assets/users/Gene.jpg" alt=""></div>
+                <p>1 réponse</p>
+                <img src="./assets/icons/chevron.svg" alt="">
+            </div>
+
+        </div>  
+
+            <div class="voir">
+                <p>J'."'".'ai une question !</p>
+                <img src="./assets/icons/arrow-right-circle-gris.svg" alt="">
+            </div>
+
+        
+        
+        
         </section>
 
-        <section id="coms">
-            
+        <section id="coms" class="community">
+        <h3>C'."'".'est vous qui le dites !</h3>
+
+        <div>
+            <div class="userProfil">
+                <img src="./assets/users/hubert.jpg" alt="">
+            </div>
+            <h4>Hubert Bonisseur</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur ?</p>
+        
+            <div class="rep">
+            <div class="userProfil"><img src="./assets/users/jeanne.jpg" alt=""></div>
+                <img src="./assets/icons/heart.svg" alt="">
+            </div>
+        
+        </div> 
+        
+        <div>
+            <div class="userProfil">
+                <img src="./assets/users/hubert.jpg" alt="">
+            </div>
+            <h4>Hubert Bonisseur</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur ?</p>
+        
+            <div class="rep">
+            <div class="userProfil"><img src="./assets/users/jeanne.jpg" alt=""></div>
+                <img src="./assets/icons/heart.svg" alt="">
+            </div>
+        
+        </div> 
+        
+        <div>
+            <div class="userProfil">
+                <img src="./assets/users/hubert.jpg" alt="">
+            </div>
+            <h4>Hubert Bonisseur</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur ?</p>
+        
+            <div class="rep">
+            <div class="userProfil"><img src="./assets/users/jeanne.jpg" alt=""></div>
+                <img src="./assets/icons/heart.svg" alt="">
+            </div>
+        
+        </div> 
+        
+        <div class="voir">
+            <p>Voir tous les commentaires</p>
+            <img src="./assets/icons/arrow-right-circle-gris.svg" alt="">
+        </div>
+        
+        
+        </div>  
         </section>
 
+
+
+    </div>
+';
+
+include('pages/navbarEvent.php');
+
+echo '
+    </body>
+    </html>
+';
+
+
+/*
 
 
         <section id="similaires">
@@ -65,15 +220,7 @@ echo '
                 include('events_similaires.php') ;
             echo '
             </section>
-
-    </div>
-';
-
-include('navbarEvent.php');
-
-echo '
-    </body>
-    </html>
-';
-
+            */
 ?>
+<script src="js/script.js"></script>
+

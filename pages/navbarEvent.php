@@ -5,8 +5,8 @@ elseif ($data['event_type'] == 1) $actionButton = 'réserver' ;
 echo '
 <div class="eventBar">
 
-    <button>share svg here</button>
-    <button><p>'.$actionButton.'</p></button>
+    <div><a href=""></a><img src="./assets/icons/share.svg" alt="share button"></div>
+    <div><a href=""></a><p>'.$actionButton.'</p></div>
 
 </div>
 ';

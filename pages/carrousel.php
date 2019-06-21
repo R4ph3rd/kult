@@ -16,8 +16,8 @@ if( mysqli_num_rows($ev) > 0){
                
 
                 <div class="infos">
-                    <h4>'.title($data['event_titre']).'</h4>
-                    <p>'.tagscard($data['event_tags']).'</p>
+                    <h4>'.utf8_encode(title($data['event_titre'])).'</h4>
+                    <p>'.utf8_encode(tagscard($data['event_tags'])).'</p>
                     <p>'.datecard($data['event_date']).'</p>
                 </div>
                 

@@ -15,8 +15,8 @@ if( mysqli_num_rows($a) > 0){
                         </div>
 
                         <div>
-                            <h4>'.$data['artiste_name'].'</h4>
-                            <p>'.tagscard($data['artiste_tags']).'</p>
+                            <h4>'.utf8_encode($data['artiste_name']).'</h4>
+                            <p>'.utf8_encode(tagscard($data['artiste_tags'])).'</p>
                         </div>
                 </a>
 

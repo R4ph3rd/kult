@@ -16,13 +16,15 @@ if( mysqli_num_rows($a) > 0){
                         </div>
 
                         <div>
-                            <h4>'.$data['msg_username'].'</h4>
-                            <p>'.parser($data['msg_content'], 'msg').'</p>
+                            <div>
+                                <h4>'.$data['msg_username'].'</h4>
+                                <p class="date">'.datecard($data['msg_date']).'</p>
+                            </div>
+                            <p class="resume">'.utf8_encode(parser($data['msg_content'], 'msg')).'</p>
                         </div>
-                        <p>'.datecard($data['msg_date']).'</p>
                 
                         <svg viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="5" cy="3" r="3"/>
+                            <circle cx="5" cy="5" r="3"/>
                         </svg>
             </article>
         ';

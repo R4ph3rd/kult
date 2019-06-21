@@ -1,0 +1,256 @@
+.ficheEvent{
+    grid-row-gap:40px;
+}
+
+.ficheEvent > section{
+    width:90vw;
+}
+
+.ficheEvent > .header {
+    width:90vw;
+    grid-template-columns:24px 24px;
+    justify-content:space-between;
+}
+
+.ficheEvent > .header > img{
+    z-index:1;
+    position:absolute;
+    top:-10px;
+    left:-10px;
+    width:calc(100vw + 20px);
+    height:calc(13vh + 10px);
+    object-fit:cover;
+    filter:blur(4px);
+}
+.ficheEvent > .header > a{ z-index:5 }
+
+.favoris{ background-image:url('../assets/icons/favoris.svg') }
+.isFavorite{ background-image:url('../assets/icons/favoris-red.svg') }
+
+.goBackWhite{ 
+    width:32px;
+    height:32px;
+    background-image:url('../assets/icons/arrow-left-white.svg')
+ }
+
+ .top{
+     justify-self:center;
+     z-index:100;
+     transform:translateY(-20px);
+     display:grid;
+     justify-items:center;
+ }
+
+.top > div{
+    width:60vw;
+    height:40vw;
+    border-radius:4px;
+}
+
+.top > div > img{
+    object-fit:cover;
+    width:100%;
+    height:100%;
+}
+
+.top > h2{
+    text-align:center;
+    font-weight:900;
+    font-size:1.5   em;
+    margin: 10px 0 10px 0;
+    text-transform:uppercase;
+}
+
+.top > h2 + p{
+    font-family:'Lato';
+    text-transform:uppercase;
+    color:var(--blak);
+    font-weight:400;
+    margin:0;
+}
+
+.gridinfos{
+    grid-row: 3 / 4;
+    display:grid;
+    grid-row-gap:20px;  
+}
+
+.gridinfos > div{
+    display:grid;
+    grid-template-columns:24px auto;
+    grid-column-gap:30px;
+}
+
+.gridinfos > div > p{
+    text-align:left;
+    align-self:center;
+    font-family:'Roboto';
+    font-weight:500;
+    margin:0
+}
+
+#desc{
+    grid-row: 4 / 5;
+}
+
+#desc > p{
+    margin:0
+}
+
+#questions{
+    grid-row:5 / 6;
+}
+
+.community > div{
+    display:grid;
+    grid-template-columns:75px auto;
+    grid-template-rows:1.2em auto auto;
+    grid-row-gap:10px;
+    grid-column-gap:20px;
+    margin-bottom:30px;
+}
+
+.community > div > .userProfil{
+    grid-area: 1 / 1 / 2 / 3;
+    width:75px;
+    height:75px;
+}
+
+.community > div > .userProfil > img{
+    border-radius:40px; 
+    object-fit:cover;
+    width:100%;
+    height:100%;
+}
+
+.community > div > h4{
+    margin:0;
+    grid-area: 1 / 2 / 2 / 3;
+}
+
+.community > div > p {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    margin:0;
+}
+
+.community > div .rep {
+    grid-area: 3 / 2 / 4 / 3;
+    display:grid;
+    grid-template-columns:20px auto 1fr;
+    grid-column-gap:10px;
+    align-items:center;
+}
+
+.rep p{
+    margin:0;
+    color:var(--gris)
+}
+
+.orga{
+    border-radius:15px;
+    width:20px;
+    height:20px;
+}
+
+.rep .orga img{
+    border-radius:10px;  
+    object-fit:cover;
+    width:100%;
+    height:100%; 
+}
+
+.chevron{
+    width:14px;
+    height:14px;
+}
+
+#coms{
+    grid-row:6 / 7;
+}
+
+.voir{
+    justify-items:end;
+    grid-template-columns:auto 32px !important;
+    grid-template-rows: 24px !important;
+    align-items:center;
+}
+
+.voir p {
+    grid-column:1 /2 !important ;
+    grid-row: 1 / 2 !important;
+    font-weight:700;
+    color:var(--gris)
+}
+
+.voir img{
+    width:24px;
+    height:24px;
+    grid-column: 2 / 3
+}
+
+
+
+
+
+
+.eventBar{
+    position:fixed;
+    width:100vw;
+    height:8vh;
+    bottom:0;
+    left:0;
+    z-index:2000;
+    
+
+    display:grid;
+    grid-template-columns:5% 20% 8% auto 5%;
+    grid-template-rows: 15px auto 15px;
+    background-color:var(--whit);
+    box-shadow: 0 -6px 12px rgba(0,0,0,0.15)
+}
+
+.eventBar > div{
+    position:relative;
+    border-radius:4px;
+}
+
+.eventBar > div > a{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    opacity:0;
+}
+
+.eventBar > div:first-child{
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    padding:0;
+    background-color:var(--blak);
+    display:grid;
+    align-items:center;
+    justify-items:center;
+}
+
+.eventBar > div:first-child > img{ transform : translateX(-2px)}
+
+.eventBar > div:last-child{
+    grid-column: 4 / 5 ;
+    grid-row:2 / 3;
+    padding:0;
+    background-color:var(--raid);
+    display:grid;
+    align-items:center;
+    justify-items:center;
+}
+
+.eventBar > div:last-child > p{
+    margin:0;
+    font-family:'Roboto';
+    font-size:14pt;
+    font-weight:500;
+    color:var(--whit);
+    text-transform:uppercase;
+}
