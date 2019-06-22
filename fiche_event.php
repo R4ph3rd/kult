@@ -7,8 +7,11 @@ include('connection.php');
 
 $title_event = $_GET['title_event'];//$_GET['title_event'];
 $ev = mysqli_query($connect, "SELECT * FROM `evenements` WHERE event_titre = '$title_event' LIMIT 1 ");
-$data = mysqli_fetch_assoc($ev) ;
 
+$_SESSION['title_event'] = $data['event_titre'];
+$_SESSION['prix_event'] = $data['event_prix'];
+
+$data = mysqli_fetch_assoc($ev) ;
 
 
 echo '<div class="maingrid ficheEvent">
@@ -23,7 +26,7 @@ echo '<div class="maingrid ficheEvent">
 
         <div class="top">
             <div><img src="'. $data['event_image'] .'" alt=""></div>
-            <h2>'. $data['event_titre'] .'</h2>
+            <h2>'. utf8_encode($data['event_titre']).'</h2>
             <p>'. typeEvent($data['event_type']) .'</p>
         </div>
 
@@ -43,15 +46,26 @@ echo '<div class="maingrid ficheEvent">
 
             <div>
             <img src="./assets/icons/location.svg" alt="">
-            <p>'. $data['event_lieu'] .'</p>
+            <p>'. utf8_encode($data['event_lieu']) .'</p>
             </div>
 
             <div>
             <img src="./assets/icons/age.svg" alt="">
             <p>'. publicAge($data['event_public']) .'</p>
-            </div>';
+            </div>
+            
+            <div>
+            <img src="./assets/icons/orga.svg" alt="">
+            <p>'. utf8_encode($data['event_organisateur']) .'</p>
+            </div>
 
-        if($data['event_type'] == 1){
+            <div>
+            <img src="./assets/icons/tags.svg" alt="">
+            <p>'. utf8_encode(tagscard($data['event_tags'])) .'</p>
+            </div>
+            ';
+
+        if($data['event_type'] == 0){
 
             echo'
             <div>
@@ -64,14 +78,9 @@ echo '<div class="maingrid ficheEvent">
             echo'
             
             <div>
-            <img src="./assets/icons/orga.svg" alt="">
-            <p>'. $data['event_organisateur'] .'</p>
+            <p>'. $data['event_prix'] .' €</p>
             </div>
 
-            <div>
-            <img src="./assets/icons/tags.svg" alt="">
-            <p>'. tagscard($data['event_tags']) .'</p>
-            </div>
             ';
         }
 
@@ -79,7 +88,7 @@ echo'
         </section>
 
         <section id="desc" >
-            <p>'. $data['event_description'] .'</p>
+            <p>'. utf8_encode($data['event_description']) .'</p>
         </section>
 
         <section id="questions" class="community">
@@ -127,7 +136,7 @@ echo'
             <p>Lorem ipsum dolor sit amet, consectetur ?</p>
         
             <div class="rep">
-            <div class="orga"><img  src="./assets/users/Gene.jpg" alt=""></div>
+            <div class="orga"><img  src="./assets/users/jeanne.jpg" alt=""></div>
                 <p>1 réponse</p>
                 <img src="./assets/icons/chevron.svg" alt="">
             </div>
@@ -149,42 +158,42 @@ echo'
 
         <div>
             <div class="userProfil">
-                <img src="./assets/users/hubert.jpg" alt="">
+                <img src="./assets/users/sarah.jpg" alt="">
             </div>
-            <h4>Hubert Bonisseur</h4>
+            <h4>Jeanne Pdt</h4>
             <p>Lorem ipsum dolor sit amet, consectetur ?</p>
         
             <div class="rep">
-            <div class="userProfil"><img src="./assets/users/jeanne.jpg" alt=""></div>
-                <img src="./assets/icons/heart.svg" alt="">
+            <div class="orga"><img src="./assets/users/jeanne.jpg" alt=""></div>
+                <img src="./assets/icons/heart.svg"  class="heart" alt="">
             </div>
         
         </div> 
         
         <div>
             <div class="userProfil">
-                <img src="./assets/users/hubert.jpg" alt="">
+                <img src="./assets/users/batispte.jpg" alt="">
             </div>
-            <h4>Hubert Bonisseur</h4>
+            <h4>Baptiste Larreau</h4>
             <p>Lorem ipsum dolor sit amet, consectetur ?</p>
         
             <div class="rep">
-            <div class="userProfil"><img src="./assets/users/jeanne.jpg" alt=""></div>
-                <img src="./assets/icons/heart.svg" alt="">
+            <div class="orga"><img src="./assets/users/jeanne.jpg" alt=""></div>
+                <img src="./assets/icons/heart.svg"  class="heart" alt="">
             </div>
         
         </div> 
         
         <div>
             <div class="userProfil">
-                <img src="./assets/users/hubert.jpg" alt="">
+                <img src="./assets/users/lisa.jpg" alt="">
             </div>
-            <h4>Hubert Bonisseur</h4>
+            <h4>Lisa Fuelli</h4>
             <p>Lorem ipsum dolor sit amet, consectetur ?</p>
         
             <div class="rep">
-            <div class="userProfil"><img src="./assets/users/jeanne.jpg" alt=""></div>
-                <img src="./assets/icons/heart.svg" alt="">
+            <div class="orga"><img src="./assets/users/jeanne.jpg" alt=""></div>
+                <img src="./assets/icons/heart.svg" class="heart" alt="">
             </div>
         
         </div> 

@@ -43,6 +43,25 @@ $(document).ready(function(){
 
         $('#maingrid > form > .heure > .timer > input').attr('value', value)
     })
+
+
+    $('.date .agenda p').dblclick(function(){
+
+        let position = $(this).position().left
+
+        $('.date .agenda p').each(function(){
+
+            if( $(this).position().left == position){
+
+                $(this).css({'color':'var(--whit)',
+                'border-radius':'20px',
+                'background-color':'var(--raid)'
+                })
+            }
+        })
+    })
+
+        
     
 })
 
@@ -114,6 +133,9 @@ function newForm(n, out){
         $('.imageL').addClass('notForm')
         $('.passAgenda').removeClass('passAgenda')
 
+        if(n == 4){
+            $('.pass').addClass('deja')
+        }
     }
 }
 
@@ -138,3 +160,27 @@ function next(){
 function goBack() {
     window.history.back();
   }
+
+
+  $(function () {
+    var isMouseDown = false,
+      isHighlighted;
+    $('.date .agenda p')
+      .mousedown(function () {
+        isMouseDown = true;
+        $(this).toggleClass("highlighted");
+        isHighlighted = $(this).hasClass("highlighted");
+        return false; // prevent text selection
+      })
+      .mouseover(function () {
+        if (isMouseDown) {
+          $(this).toggleClass("highlighted", isHighlighted);
+        }
+      });
+
+
+  $(document)
+  .mouseup(function () {
+    isMouseDown = false;
+  });
+});

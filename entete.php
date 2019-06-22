@@ -15,6 +15,12 @@ echo'
     <link rel="stylesheet" href="css/cards.css">
     <link rel="stylesheet" href="css/messagerie.css">
     <link rel="stylesheet" href="css/ficheEvent.css">
+
+
+<!-- Import Leaflet CSS Style Sheet -->
+<link rel="stylesheet" href="https://npmcdn.com/leaflet@1.0.0-rc.2/dist/leaflet.css" />
+<!-- Import Leaflet JS Library -->
+<script src="https://npmcdn.com/leaflet@1.0.0-rc.2/dist/leaflet.js"></script>
     
     <script
     src="https://code.jquery.com/jquery-3.4.0.min.js"

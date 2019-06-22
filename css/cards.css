@@ -59,7 +59,7 @@
 }
 
 .events .infos > h4{
-    font-weight:800;
+    font-weight:700;
     font-size:1.05em;
     text-transform:uppercase;
     margin:0;
@@ -240,7 +240,8 @@
 
 #card_artiste p{
     margin:0;
-    color:var(--raid)
+    color:var(--raid);
+    font-weight:700
 }
 
 #card_artiste h4{

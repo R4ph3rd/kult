@@ -6,7 +6,7 @@ echo '
 <div class="eventBar">
 
     <div><a href=""></a><img src="./assets/icons/share.svg" alt="share button"></div>
-    <div><a href=""></a><p>'.$actionButton.'</p></div>
+    <div><a href="reservation.php"></a><p>'.$actionButton.'</p></div>
 
 </div>
 ';

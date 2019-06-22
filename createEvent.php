@@ -4,6 +4,7 @@ include("database.php");
 include('functions.php');
 include('entete.php');
 
+
 $months = array('Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre');
 
 echo '
@@ -113,9 +114,116 @@ echo '
         <section id="lieu" class="notForm lieu">
 
         <input type="text" class="textArea" name="lieu" placeholder="Entrer un lieu">
+
+        <div id="map" style="width: 400px; height: 300px;"></div>
+
         </section>
 
         <section id="salles" class="notForm salles">
+
+
+            <article class="lieux">
+
+            <img src="./assets/salles/crucible.jpg" alt="">
+
+            <div class="salleInfos">
+                <h4>Crucible</h4>
+
+                <div>
+                    <img src="./assets/icons/phone.svg" alt="">
+                    <p>05 61 24 48 65</p>
+                </div>
+
+                <div>
+                    <img src="./assets/icons/mail.svg" alt="">
+                    <p>conctact@crucible.com</p>
+                </div>
+
+                <div>
+                    <img src="./assets/icons/web.svg" alt="">
+                    <p>crucible.com</p>
+                </div>
+            </div>
+
+            </article>
+
+
+            <article class="lieux">
+
+            <img src="./assets/salles/anjou.jpg" alt="">
+
+            <div class="salleInfos">
+                <h4>salle des fêtes</h4>
+
+                <div>
+                    <img src="./assets/icons/phone.svg" alt="">
+                    <p>02 51 45 96 85</p>
+                </div>
+
+                <div>
+                    <img src="./assets/icons/mail.svg" alt="">
+                    <p>contact@mairiedanjou.com</p>
+                </div>
+
+                <div>
+                    <img src="./assets/icons/web.svg" alt="">
+                    <p>mairiedanjou.fr</p>
+                </div>
+            </div>
+
+            </article>
+
+
+            <article class="lieux">
+
+            <img src="./assets/salles/pigeonnier.jpg" alt="">
+
+            <div class="salleInfos">
+                <h4>vieux pigeon...</h4>
+
+                <div>
+                    <img src="./assets/icons/phone.svg" alt="">
+                    <p>06 48 76 48 65</p>
+                </div>
+
+                <div>
+                    <img src="./assets/icons/mail.svg" alt="">
+                    <p>marie.lotie@hotmail.com</p>
+                </div>
+
+                <div>
+                    <img src="./assets/icons/web.svg" alt="">
+                    <p>fontenilles.fr</p>
+                </div>
+            </div>
+
+            </article>
+
+
+            <article class="lieux">
+
+            <img src="./assets/salles/ferrailleur.jpg" alt="">
+
+            <div class="salleInfos">
+                <h4>le ferrailleur</h4>
+
+                <div>
+                    <img src="./assets/icons/phone.svg" alt="">
+                    <p>05 96 78 41 12</p>
+                </div>
+
+                <div>
+                    <img src="./assets/icons/mail.svg" alt="">
+                    <p>conctact@ferrailleur.com</p>
+                </div>
+
+                <div>
+                    <img src="./assets/icons/web.svg" alt="">
+                    <p>ferrailleur.com</p>
+                </div>
+            </div>
+
+            </article>
         </section>
 
         <section id="confirmation" class="notForm confirmation">
@@ -251,3 +359,29 @@ echo '
 ?>
 
 <script src="js/formulaireEvent.js"></script>
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoicjRwaDNyZCIsImEiOiJjang3b3YyMnUwYnQ0M3lqeWYxN3RheHJqIn0.GnHeu4pXsWB1aOh2ovTUwg';
+var map = new mapboxgl.Map({
+container: 'map',
+style: 'mapbox://styles/r4ph3rd/cjx7owqax10ls1cpdnx48l6a0'
+});
+
+var mymap = L.map('map', { /* use the same name as your <div id=""> */
+center: 14.5747.301,-1.510, /* set GPS Coordinates */
+zoom: 17, /* define the zoom level */
+zoomControl: false, /* false = no zoom control buttons displayed */
+scrollWheelZoom: false /* false = scrolling zoom on the map is locked */
+});
+ 
+L.tileLayer('https://api.tiles.mapbox.com/v4/{map}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoicjRwaDNyZCIsImEiOiJjang3b3YyMnUwYnQ0M3lqeWYxN3RheHJqIn0.GnHeu4pXsWB1aOh2ovTUwg', { /* set your personal MapBox Access Token */
+maxZoom: 20, /* zoom limit of the map */
+attribution: 'Données © Contributeurs <a href="http://openstreetmap.org">OpenStreetMap</a> + ' +
+'<a href="http://mapbox.com">Mapbox</a> | ' +
+'<a href="https://creativecommons.org/licenses/by/2.0/">CC-BY</a> ' +
+'Kult 2019', /* set the map's caption */
+id: 'mapbox.streets' /* mapbox.light / dark / streets / outdoors / satellite */
+}).addTo(mymap);
+ 
+L.marker(14.5747.301,-1.510).addTo(mymap); /* set your location's GPS Coordinates : [LAT,LON] */
+
+</script>

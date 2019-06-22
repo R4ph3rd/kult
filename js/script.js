@@ -80,11 +80,32 @@ $(document).ready(function(){
                      }
       });
    });
+
+
+
+   let billetPage = false
+
+   $('.billet > *').click(function(){
+
+    if($('.question').text() == 'As-tu pensé à le noter dans ton agenda ?'){
+        $(this).attr('href', 'billet.php')
+        billetPage = true
+   }
+   
+       $('.sms').css('display','none')
+       $('.mark').css('display','grid')
+
+       $('.question').html('As-tu pensé à le noter dans ton agenda ?')
+
+        if( billetPage == false) return false
+   })
+
+
+
+
     
     
-    $( function() {
-        $( "#datepicker" ).datepicker();
-      } );
+
 })
 
 
