@@ -12,11 +12,6 @@ $(document).ready(function(){
     }
 
 
-    
-    /*$('#maingrid > #age > div > a').click(function(){
-        next()
-    })*/
-
     $('.header a').click(function(){
         
         let out = n
@@ -29,12 +24,9 @@ $(document).ready(function(){
         return false
     })
 
-    $('#maingrid > form > .age > *').delay(800).click(function(){
-        next()
-    })
 
     $('#maingrid > form > .confirmation > *').click(function(){
-        console.log('la blanquette est boooonne')
+
         next()
     })
 
@@ -51,15 +43,16 @@ $(document).ready(function(){
 
         $('.date .agenda p').each(function(){
 
-            if( $(this).position().left == position){
-
-                $(this).css({'color':'var(--whit)',
-                'border-radius':'20px',
-                'background-color':'var(--raid)'
-                })
-            }
+            if( $(this).position().left == position ){
+                $(this).toggleClass("dateSelected")
+            } 
         })
     })
+
+    $('.date .agenda p').click(function(){
+                $(this).toggleClass("dateSelected")
+        })
+    
 
         
     
@@ -103,11 +96,18 @@ function newForm(n, out){
             $('.pass .button').css('text-transform','none')
         }
 
-    } else if(n == 5){
+    } else if(n == 4){
+        $('.pass .svg').removeClass('notForm')
+        $('.pass').removeClass('redButton')
+        $('.pass .button').addClass('notForm')
+        $('.pass').addClass('deja')
+          
+    }else if(n == 5){
 
         $('.pass .svg').addClass('notForm')
         $('.pass .button').addClass('notForm')
         $('.pass').removeClass('redButton')
+        $('.pass').removeClass('deja')  
 
     } else if(n == 6){
         $('.pass .svg').removeClass('notForm')
@@ -132,10 +132,9 @@ function newForm(n, out){
         $('.pass .button').addClass('notForm')
         $('.imageL').addClass('notForm')
         $('.passAgenda').removeClass('passAgenda')
+        $('.pass').removeClass('deja')
 
-        if(n == 4){
-            $('.pass').addClass('deja')
-        }
+
     }
 }
 

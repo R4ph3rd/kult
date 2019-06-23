@@ -16,7 +16,7 @@ echo '
         </div>
     
         <h3>Que veux-tu organiser ?</h3>
-        <form action="script_creationEvent.php" method="post">
+        <form action="script_creationEvent.php" method="post" enctype="multipart/form/data">
 
 
         <section id="organiser" class="organiser">
@@ -63,7 +63,7 @@ echo '
         <section id="description" class="notForm description">
 
         <label class="field a-field a-field_a2 page__field">
-        <input class="field__input a-field__input" placeholder="Une description de l'."'".'atelier" required>
+        <input name="description" class="field__input a-field__input" placeholder="Une description de l'."'".'atelier" required>
         <span class="a-field__label-wrap">
         </span>
       </label>
@@ -114,8 +114,6 @@ echo '
         <section id="lieu" class="notForm lieu">
 
         <input type="text" class="textArea" name="lieu" placeholder="Entrer un lieu">
-
-        <div id="map" style="width: 400px; height: 300px;"></div>
 
         </section>
 
@@ -359,29 +357,3 @@ echo '
 ?>
 
 <script src="js/formulaireEvent.js"></script>
-<script>
-mapboxgl.accessToken = 'pk.eyJ1IjoicjRwaDNyZCIsImEiOiJjang3b3YyMnUwYnQ0M3lqeWYxN3RheHJqIn0.GnHeu4pXsWB1aOh2ovTUwg';
-var map = new mapboxgl.Map({
-container: 'map',
-style: 'mapbox://styles/r4ph3rd/cjx7owqax10ls1cpdnx48l6a0'
-});
-
-var mymap = L.map('map', { /* use the same name as your <div id=""> */
-center: 14.5747.301,-1.510, /* set GPS Coordinates */
-zoom: 17, /* define the zoom level */
-zoomControl: false, /* false = no zoom control buttons displayed */
-scrollWheelZoom: false /* false = scrolling zoom on the map is locked */
-});
- 
-L.tileLayer('https://api.tiles.mapbox.com/v4/{map}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoicjRwaDNyZCIsImEiOiJjang3b3YyMnUwYnQ0M3lqeWYxN3RheHJqIn0.GnHeu4pXsWB1aOh2ovTUwg', { /* set your personal MapBox Access Token */
-maxZoom: 20, /* zoom limit of the map */
-attribution: 'Données © Contributeurs <a href="http://openstreetmap.org">OpenStreetMap</a> + ' +
-'<a href="http://mapbox.com">Mapbox</a> | ' +
-'<a href="https://creativecommons.org/licenses/by/2.0/">CC-BY</a> ' +
-'Kult 2019', /* set the map's caption */
-id: 'mapbox.streets' /* mapbox.light / dark / streets / outdoors / satellite */
-}).addTo(mymap);
- 
-L.marker(14.5747.301,-1.510).addTo(mymap); /* set your location's GPS Coordinates : [LAT,LON] */
-
-</script>

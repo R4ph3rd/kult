@@ -6,6 +6,7 @@ include('entete.php');
 include('pages/menu.php');
 //include('pages/navbar.php');
 
+$_SESSION['quelMenu']  = 'mes_participations';
 
 include('pages/corps.php');
 ///////////// EVENEMENTS FAVORIS ////////////////

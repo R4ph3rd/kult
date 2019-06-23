@@ -12,6 +12,8 @@ $_SESSION['title_event'] = $data['event_titre'];
 $_SESSION['prix_event'] = $data['event_prix'];
 
 $data = mysqli_fetch_assoc($ev) ;
+$_SESSION['quelMenu']  = 'mes_evenements';
+
 
 
 echo '<div class="maingrid ficheEvent">
@@ -20,14 +22,14 @@ echo '<div class="maingrid ficheEvent">
 
         <div class="header">
             <img src="'. $data['event_image'] .'" alt="">
-            <a href="#" onclick="goBack()" class="goBackWhite svg"></a>
+            <a '.wichReturn($data['my_event']).' class="goBackWhite svg"></a>
             <a href="#" id="event_fav" data-role="update" data-id=" $data[event_id]" class="favoris svg '.mesFav($data['event_fav']).'"></a>
         </div>
 
         <div class="top">
             <div><img src="'. $data['event_image'] .'" alt=""></div>
             <h2>'. utf8_encode($data['event_titre']).'</h2>
-            <p>'. typeEvent($data['event_type']) .'</p>
+            <p>'.  typeEvent($data['event_type']) .'</p>
         </div>
 
 
@@ -52,12 +54,18 @@ echo '<div class="maingrid ficheEvent">
             <div>
             <img src="./assets/icons/age.svg" alt="">
             <p>'. publicAge($data['event_public']) .'</p>
-            </div>
+            </div>';
+
+            if ($data['my_event'] == 0){
+                echo'
             
             <div>
             <img src="./assets/icons/orga.svg" alt="">
-            <p>'. utf8_encode($data['event_organisateur']) .'</p>
-            </div>
+            <p class="organisou" >'. utf8_encode($data['event_organisateur']) .'</p>
+            </div>';
+            } 
+
+            echo'
 
             <div>
             <img src="./assets/icons/tags.svg" alt="">
@@ -65,7 +73,7 @@ echo '<div class="maingrid ficheEvent">
             </div>
             ';
 
-        if($data['event_type'] == 0){
+        if($data['event_type'] == 0 && $data['my_event'] == 0){
 
             echo'
             <div>
@@ -92,8 +100,10 @@ echo'
         </section>
 
         <section id="questions" class="community">
-        <h3>Des questions ?</h3>
+        <h3>Des questions ?</h3>';
 
+        if ($data['my_event'] == 0){
+echo'
         <div>
             <div class="userProfil">
                 <img src="./assets/users/hubert.jpg" alt="">
@@ -146,16 +156,22 @@ echo'
             <div class="voir">
                 <p>J'."'".'ai une question !</p>
                 <img src="./assets/icons/arrow-right-circle-gris.svg" alt="">
-            </div>
-
+            </div>';
+        } else {
+            echo'
+            <p class="mine">Aucune question n'."'".'a encore été posée.</p>';
+        }
         
         
-        
+   echo'     
         </section>
 
         <section id="coms" class="community">
-        <h3>C'."'".'est vous qui le dites !</h3>
+        <h3>C'."'".'est vous qui le dites !</h3>';
 
+
+        if ($data['my_event'] == 0){
+echo'
         <div>
             <div class="userProfil">
                 <img src="./assets/users/sarah.jpg" alt="">
@@ -204,7 +220,15 @@ echo'
         </div>
         
         
-        </div>  
+        </div>  ';
+
+        } else {
+            echo'
+            <p class="mine">Ton évènement n'."'".'a pas encore reçu de commentaire.</p>
+            ';
+        }
+
+        echo'
         </section>
 
 
@@ -212,7 +236,7 @@ echo'
     </div>
 ';
 
-include('pages/navbarEvent.php');
+if ($data['my_event'] == 0) include('pages/navbarEvent.php');
 
 echo '
     </body>

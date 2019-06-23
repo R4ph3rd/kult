@@ -14,6 +14,7 @@ echo'
     <link rel="stylesheet" href="css/creationEvent.css">
     <link rel="stylesheet" href="css/cards.css">
     <link rel="stylesheet" href="css/messagerie.css">
+    <link rel="stylesheet" href="css/events&ateliers.css">
     <link rel="stylesheet" href="css/ficheEvent.css">
 
 

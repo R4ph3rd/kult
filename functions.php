@@ -94,4 +94,13 @@ function mesFav($f){
         return 'isFavorite';
     } else return '';
 }
+
+
+function wichReturn($m){
+
+    if($m == 0) return ' href="#" onclick="goBack()"';
+    else if ($m == 1) return ' href="events&billets.php"';
+}
+
+
 ?>

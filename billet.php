@@ -9,6 +9,7 @@ $ev = mysqli_query($connect, "SELECT * FROM `evenements` WHERE event_titre = '$t
 $data = mysqli_fetch_assoc($ev) ;
 
 $_SESSION['event'] = $data ;
+$_SESSION['quelMenu']  = 'mes_participations';
 
 
 echo '

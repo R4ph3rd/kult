@@ -104,7 +104,22 @@ $(document).ready(function(){
 
 
     
-    
+    let cat = $('#events_ateliers .selecteur .listed').text()
+
+
+    if( cat == 'Je participe'){
+        $('.organisation').toggleClass('listDisplayed')
+    } else if (cat == "J'organise"){
+        $('.participation').toggleClass('listDisplayed')
+    }
+
+    $('#events_ateliers .selecteur a').click(function(){
+        $('.listed').toggleClass('listed')
+        $(this).toggleClass('listed')
+
+        $('.cardsBillets > *').toggleClass('listDisplayed')
+        
+    })
 
 })
 

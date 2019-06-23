@@ -4,7 +4,7 @@
 
 <div id="liens">
     <div id="home"><a href="index.php">Acceuil</a></div>
-    <div id="mesEvents"><a href="mesEvents.php">Mes évents</a></div>
+    <div id="mesEvents"><a href="events&billets.php">Mes évents</a></div>
     <div id="creerEvent"><a href="createEvent.php">Créer un event</a></div>
     <div id="monAgenda"><a href="monAgenda.php">Mon agenda</a></div>
     <div id="monProfil"><a href="monProfil.php">Mon profil</a></div>

@@ -136,6 +136,9 @@
     background:linear-gradient(135deg, rgb(20,20,20,0) 0%, rgb(20,20,20,0.1) 80%, rgb(20,20,20,0.2) 100%);
 }
 
+.enAvant img{
+    filter: brightness(60%)
+}
 
 
 .enAvant > article > .infos {
