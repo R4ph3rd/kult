@@ -4,6 +4,7 @@ $(document).ready(function(){
 
     let tl = new TimelineMax({paused:true})
     let tlInverse = new TimelineMax({paused:true})
+    let tlSearch = new TimelineMax({paused:true})
 
     tl.staggerTo('#menu', 0, {display:'grid'}, 0)
     tl.staggerTo('#menu > #liens > div > a', 0.1, {opacity:1, transform:'translateX(0)'}, 0.05)
@@ -11,6 +12,13 @@ $(document).ready(function(){
     tlInverse.staggerTo('#menu > #liens > div > a', 0.3, {opacity:0}, 0.1)
     tlInverse.staggerTo('#menu div', 0.1, {opacity:0, height:0}, 0.1)
     tlInverse.to('#menu', 0.3, {display:'none'}, 0.7)
+
+
+    let sizeSpan = $('.header').width() - 40
+    tlSearch.staggerTo('.autres', 0.1, {opacity:0, transform:'translateX(200px)'}, 0.1)
+    tlSearch.to('#search', 0.25, {right:0}, 0.1)
+    tlSearch.to('.header span', 0.3, {opacity:1,  width: sizeSpan}, 0.1)
+    tlSearch.to('.searchPage', 0.3, {opacity:1,  transform:'translateY(0)'}, 0.1)
 
     /* menu animation */
     $('.menu').click(function(){
@@ -109,8 +117,10 @@ $(document).ready(function(){
 
     if( cat == 'Je participe'){
         $('.organisation').toggleClass('listDisplayed')
+        $('.voir_anciens').html('Voir anciens billets')
     } else if (cat == "J'organise"){
         $('.participation').toggleClass('listDisplayed')
+        $('.voir_anciens').html('Voir anciennes annonces')
     }
 
     $('#events_ateliers .selecteur a').click(function(){
@@ -118,9 +128,60 @@ $(document).ready(function(){
         $(this).toggleClass('listed')
 
         $('.cardsBillets > *').toggleClass('listDisplayed')
-        
+
+        if( $(this).text() == 'Je participe'){
+            $('.voir_anciens').html('Voir anciens billets')
+        } else if ( $(this).text() == "J'organise"){
+            $('.voir_anciens').html('Voir anciennes annonces')
+        }
     })
 
+
+    $('#search').click(function(){
+        tlSearch.play()
+        $(this).toggleClass('searching')
+        $('#searching_input').toggleClass('inSearch')
+        $('.searchPage').toggleClass('listHidden')
+        $('.maingrid section').toggleClass('listHidden')
+    })
+
+    $('.searchPage .selecteur a').click(function(){
+        $('.listed').toggleClass('listed')
+        $(this).toggleClass('listed')
+
+        $('.participation').toggleClass('listHidden')
+        $('.organisation').toggleClass('listHidden')
+
+
+    })
+
+
+    $('.header input').click(function(){
+
+        let testEv = ['evenements', 'evenement', 'event', 'évènements', 'évènement', 'événement', 'événements', 'EVENEMENT', 'EVENEMENTS', 'Evenements', 'Evenenement','spectacle', 'theatre', 'théâtre', 'théatre', 'concert', 'musique', 'spectacle']
+        let testAt = ['atelier', 'ateliers', 'atliers', 'ATELIER', 'Atelier', 'ATELIERS', 'Ateliers']
+        let txt = $(this).val().split(' ')
+        console.log(txt)
+
+        for (let i = 0 ; i < testEv.length ; i++){
+            for (let j = 0 ; j < testEv.length ; j++){
+                if(txt[j] == testEv[i]){
+                    $('.organisation').removeClass('listHidden')
+                }
+            }
+        }
+
+
+        for (let i = 0 ; i < testAt.length ; i++){
+            for (let j = 0 ; j < testEv.length ; j++){
+                if(txt[j] == testAt[i]){
+                    $('.participation').removeClass('listHidden')
+                    $('.selecteur > *').toggleClass('listed')
+                }
+            }
+        }
+        if (txt.length > 1) $('.searchPage .selecteur').removeClass('listHidden')
+    })
 })
 
 

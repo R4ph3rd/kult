@@ -4,6 +4,8 @@ include("database.php");
 include('functions.php');
 include('entete.php');
 
+
+
 echo '
     <div id="maingrid">
 

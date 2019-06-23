@@ -54,13 +54,6 @@ echo'</section>';
 
 
 echo '</div>';
-    
-
-echo '<p>Date: <input type="text" id="datepicker"></p>
- 
-    </body>
-    </html>
-';
 
 ?>
 

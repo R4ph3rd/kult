@@ -23,17 +23,19 @@ echo '
         <div class="billetEvent">
             <img src="./assets/events/QRCode.svg" alt="">
             <h3>'. $_SESSION['title_event'] .'</h3>
+            <p id="type">'.  typeEvent($data['event_type']) .'</p>
             <h4>Noël Flantier</h4>
             <div>
                 <img src="./assets/icons/participants.svg" alt="">
                 <p>2 personnes</p>
             </div>
 
-            <p>'. ($_SESSION['prix_event'] * 2).'  €</p>
+            
         </div>
     
         ';
 ?>
+
 
 <script src="js/script.js"></script>
 

@@ -16,8 +16,8 @@
 .ficheEvent > .header > img{
     z-index:1;
     position:absolute;
-    top:-10px;
-    left:-10px;
+    top:-27px;
+    left:-30px;
     width:calc(100vw + 20px);
     height:calc(13vh + 10px);
     object-fit:cover;
@@ -88,7 +88,8 @@
     align-self:center;
     font-family:'Roboto';
     font-weight:500;
-    margin:0
+    margin:0;
+    text-transform:capitalize
 }
 
 #desc{
@@ -101,6 +102,7 @@
 
 #questions{
     grid-row:5 / 6;
+
 }
 
 .community h3{
@@ -174,7 +176,8 @@ font-weight:900;
 
 #coms{
     grid-row:6 / 7;
-    margin-bottom:6vh
+    margin-bottom:6vh;
+    
 }
 
 .voir{
@@ -341,7 +344,7 @@ font-weight:900;
     display:grid;
     grid-area: 5 / 2 / 6 / 3;
     justify-items:center;
-    grid-template-rows:50% 30pt 1.2em 1em 1em;
+    grid-template-rows:50% auto 1.2em 1em 1em;
     align-content:space-between;
 }
 
@@ -393,4 +396,9 @@ font-weight:900;
     color:var(--gris);
     font-weight:700;
     opacity:0.7
+}
+
+#type{
+    font-weight:400;
+    text-transform:uppercase;
 }

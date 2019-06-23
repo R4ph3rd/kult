@@ -145,7 +145,7 @@ width:24px;
     cursor:text;
     font-size:1em;
     font-weight:700;
-    box-shadow:4px 4px 10px rgba(0,0,0,0.05)
+    box-shadow:4px 4px 10px rgba(0,0,0,0.05);
 }
 
 .textArea:hover{
@@ -290,6 +290,10 @@ width:24px;
     font-size: 1em;
     color: var(--gris);
     opacity: 1;
+
+    resize: none;
+    rows:20;
+    
   }
   
   .field__input:focus::-webkit-input-placeholder{

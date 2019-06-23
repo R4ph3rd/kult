@@ -37,10 +37,14 @@ echo '<section id="events_ateliers">
         
         if( mysqli_num_rows($ev) > 0){
             $data = mysqli_fetch_array($ev);
+
+            $_SESSION['title_event'] = $data['event_titre'] ;
+            $_SESSION['type_event'] = $data['event_type'] ;
+
         
                 echo'
                     <article>
-                        <a href="fiche_event.php?title_event='.lien($data['event_titre']).'"></a>
+                        <a href="billet.php"></a>
                         
                             <img src="'.$data['event_image'].'" class="frontImg" alt="image of '.$data['event_titre'].'">
                        
@@ -87,7 +91,7 @@ echo '<section id="events_ateliers">
         
                 echo'
                     <article>
-                        <a href="fiche_event.php?title_event='.lien($data['event_titre']).'"></a>
+                        <a href="billet.php"></a>
                         
                             <img src="'.$data['event_image'].'" class="frontImg" alt="image of '.$data['event_titre'].'">
                        
@@ -182,7 +186,10 @@ echo '<section id="events_ateliers">
     echo'    
         </div>
         
-        <p class="voir anciens"></p>
+        <div id="voir_anciens">
+            <p class="voir_anciens"></p>
+            <img src="./assets/icons/chevron-dark.svg" alt="">
+        </div>
 
 </section>';
 
