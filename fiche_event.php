@@ -86,7 +86,7 @@ echo '<div class="maingrid ficheEvent">
             </div>
             ';
 
-        } elseif($data['event_type'] == 1) {
+        } /*elseif($data['event_type'] == 1) {
             echo'
             
             <div>
@@ -94,7 +94,7 @@ echo '<div class="maingrid ficheEvent">
             </div>
 
             ';
-        }
+        }*/
 
 echo'
         </section>

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le :  Dim 02 juin 2019 à 22:48
--- Version du serveur :  8.0.15
--- Version de PHP :  7.2.17
+-- Généré le :  lun. 24 juin 2019 à 20:19
+-- Version du serveur :  10.3.12-MariaDB
+-- Version de PHP :  7.3.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -29,10 +29,10 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `artistes` (
-  `artiste_name` text COLLATE utf8mb4_general_ci NOT NULL,
-  `artiste_photo` text COLLATE utf8mb4_general_ci NOT NULL,
-  `artiste_tags` text COLLATE utf8mb4_general_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `artiste_name` text NOT NULL,
+  `artiste_photo` text NOT NULL,
+  `artiste_tags` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `artistes`
