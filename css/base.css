@@ -21,6 +21,7 @@ box-sizing: inherit;
 body{
     font-family:'Roboto';
     color:var(--blak);
+    background-color:#F5FAFF;
     /*background: linear-gradient(to bottom, rgb(255,255,255) 70%, rgb(235,235,235))*/
 }
 

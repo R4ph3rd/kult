@@ -39,7 +39,7 @@ function typeEvent($t){
 
 function resume($r){
     $l = strlen($r);
-    if($l > 300) return substr($c, 0, 300).'...';
+    if($l > 80) return substr($r, 0, 85).'...';
     else return $r;
 }
 
@@ -100,6 +100,22 @@ function wichReturn($m){
 
     if($m == 0) return ' href="#" onclick="goBack()"';
     else if ($m == 1) return ' href="events&billets.php"';
+}
+
+
+
+function hf($g){
+
+
+$filles = array('anne bernadou', 'Elise Fonti', 'Mathilde Cagnard', 'Marie Lambert');
+$garcons = array('jean delatouche', 'matthieu blomet', 'Michel Delpuech', 'Christian Draque', 'Tom Hardit', 'Julien Castillon', 'Eric Chevron', 'Marc Serré', 'Louis de Funis');
+
+
+    for ($i = 0; $i < count($garcons) ; $i++){
+        if ($g == $filles[$i]) return './assets/users/fille.jpg';
+        elseif ($g == $garcons[$i]) return './assets/users/garcon.jpg';
+        elseif( $g == 'Les Fumigènes')return './assets/users/groupe.jpg';
+    }
 }
 
 

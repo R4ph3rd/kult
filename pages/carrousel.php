@@ -1,6 +1,6 @@
 <?php
 
-$ev = mysqli_query($connect, "SELECT * FROM `evenements` ");
+$ev = mysqli_query($connect, "SELECT * FROM `evenements` ORDER BY event_fav");
 $n = 0;
 
 if( mysqli_num_rows($ev) > 0){

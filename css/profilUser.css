@@ -1,0 +1,128 @@
+#profilUser{
+    display:grid;
+    justify-items: center;
+    grid-area: 2 / 1 / 3 / 2;
+}
+
+
+#profilUser > img{
+    --size: 200px;
+    height:var(--size);
+    width:var(--size);
+    object-fit:cover;
+    border-radius:var(--size);
+    box-shadow:4px 4px 10px rgba(0,0,0,0.3)
+
+}
+
+.username{
+    margin-top:20px;
+    margin-bottom:20px;
+}
+
+.username h1{
+    text-transform:capitalize;
+    text-align:center;
+    font-weight:700;
+    margin:0 0 20px 0;
+    font-size:2em;
+}
+
+.username p{
+    text-transform:capitalize;
+    text-align:center;
+    font-weight:400;
+    font-size:1.4em;
+    margin:0;
+    color:var(--raid);
+}
+
+.iconsUser{
+    width:130px;
+    display:flex;
+    justify-content:space-between;
+}
+
+.iconsUser img{
+    width:24px;
+    height:24px;
+}
+
+.prezprez{
+    margin-top:40px;
+}
+
+.prezprez h2{
+    font-size:1.2em;
+    font-weight:700;
+    margin:0 0 20px 0;
+}
+
+.prezprez p{
+    margin:0;
+    font-size:1em;
+}
+
+
+.socialsUser{
+    margin-top:50px;
+    display:grid;
+    justify-content: center;
+    grid-template-columns:repeat(5,35px);
+    grid-template-rows:35px;
+    grid-column-gap:20px;
+}
+
+.socialsUser div{
+    border-radius:35px;
+    display:grid;
+    place-items: center;
+}
+
+.socialsUser div img{
+    width:100%;
+    height:100%;
+}
+
+.apparitions{
+    margin-top:50px;
+}
+
+.apparitions h2{
+        font-size:1.2em;
+        font-weight:700;
+        margin:0 0 20px 0;
+}
+
+.apparitions div{
+    position:relative;
+    margin-bottom:10px;
+}
+
+.apparitions div div {
+    position:absolute;
+    z-index:10;
+    left:calc(50% - 20px);
+    top:calc(50% - 20px);
+    border-radius:40px;
+    width:40px;
+    height:40px;
+    background-color: rgba(255,255,255,0.1);
+    filter:blur(5px);
+    display:grid;
+    place-items: center;
+    box-shadow:0 0 20px rgba(255,255,255,0.5)
+}
+
+.apparitions div > img:last-child{
+    filter: brightness(60%);
+    border-radius:4px;
+}
+
+.apparitions div > .play{
+    filter: brightness(85%);
+    position:absolute;
+    z-index:10;
+    left:calc(50% - 12px);
+    top:calc(50% - 12px);
+}

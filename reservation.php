@@ -4,15 +4,13 @@ include("database.php");
 include('functions.php');
 include('entete.php');
 
-
-
 echo '
     <div id="maingrid">
 
         <div class="header">
             <a href="" onclick="goBack()" class="goBack svg">
             </a>
-        </div>
+        </div> 
 
         <h3 class="question" >Ta réservation pour l’atelier Improvisation théâtrale est confirmée. <br>Veux-tu un rappel ?</h3>
 

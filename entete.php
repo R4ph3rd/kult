@@ -17,6 +17,8 @@ echo'
     <link rel="stylesheet" href="css/events&ateliers.css">
     <link rel="stylesheet" href="css/ficheEvent.css">
 
+    <link rel="stylesheet" href="css/profilUser.css">
+
 
 <!-- Import Leaflet CSS Style Sheet -->
 <link rel="stylesheet" href="https://npmcdn.com/leaflet@1.0.0-rc.2/dist/leaflet.css" />

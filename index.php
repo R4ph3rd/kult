@@ -9,6 +9,7 @@ include('pages/menu.php');
 $_SESSION['quelMenu']  = 'mes_participations';
 
 include('pages/corps.php');
+include('pages/navbar.php');
 ///////////// EVENEMENTS FAVORIS ////////////////
 echo '<section id="events">
             <h2>Favoris</h2>
@@ -48,7 +49,7 @@ echo'</section>';
 echo '<section id="news">
             <h2>On parle de vous !</h2>
     ';
-//include('newsCards.php');
+include('pages/newsCards.php');
 echo'</section>';
 
 

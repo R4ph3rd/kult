@@ -14,7 +14,7 @@ if(isset($_POST['submit'])){
     $event_lieu = utf8_decode($_POST["lieu"]);
     $event_date = '2019-07-03'; //pas encore fonctionnel
     $event_heure= $_POST["heure"];
-    $event_image = './assets/events/'.$name[random_int(2)].'.jpg';
+    $event_image = './assets/events/'.$name[1].'.jpg';
     $event_fav = 0 ;
     $my_event = 1;
 

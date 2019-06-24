@@ -94,7 +94,7 @@
 #events_ateliers article .infos div p{
     color:var(--blak);
     text-align:left;
-    font-size:1em;
+    font-size:0.95em;
     font-weight:500;
     margin:0;
     text-transform:capitalize
@@ -158,6 +158,7 @@
     mask:url('../assets/icons/mask_entire.svg');
     mask-position:0 50%;
     mask-size: cover;
+    max-width:100%;
 }
 
 #voir_anciens{

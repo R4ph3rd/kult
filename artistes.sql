@@ -39,8 +39,16 @@ CREATE TABLE `artistes` (
 --
 
 INSERT INTO `artistes` (`artiste_name`, `artiste_photo`, `artiste_tags`) VALUES
-('Hubert de Labath', './assets/artistes/oss.jpg', 'Humour&stand-up'),
+('Sanioloco', './assets/artistes/sanioloco.jpg', 'Humour&stand-up'),
 ('René Coty', './assets/artistes/coty.jpg', 'Danse'),
+('Louise Cartier', './assets/artistes/louise_cartier.jpg', 'Danse'),
+('Masse Ponk', './assets/artistes/massive_ponk.jpg', 'musique&métal'),
+('Yseult Martel', './assets/artistes/yseult_martel.jpg', 'musique&pop'),
+('Orson McGregor', './assets/artistes/orso_mcgregor.jpg', 'théâtre&impro'),
+('Hubert de Labath', './assets/artistes/oss.jpg', 'Humour&stand-up'),
+('Mélissandre Jabert', './assets/artistes/melissandre_jabert.jpg', 'stand-up'),
+('Blossom', './assets/artistes/blossom.jpg', 'Comédie'),
+('Yolande Artois', './assets/artistes/yolande_artois.jpg', 'théâtre'),
 ('Karadoc', './assets/artistes/karadoc.jpg', 'Théâtre');
 COMMIT;
 

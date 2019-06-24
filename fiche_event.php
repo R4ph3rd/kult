@@ -8,12 +8,16 @@ include('connection.php');
 $title_event = $_GET['title_event'];//$_GET['title_event'];
 $ev = mysqli_query($connect, "SELECT * FROM `evenements` WHERE event_titre = '$title_event' LIMIT 1 ");
 
-$_SESSION['title_event'] = $data['event_titre'];
-$_SESSION['prix_event'] = $data['event_prix'];
+
 
 $data = mysqli_fetch_assoc($ev) ;
 $_SESSION['quelMenu']  = 'mes_evenements';
 
+$_SESSION['user_name'] = utf8_encode($data['event_organisateur']) ;
+
+$_SESSION['title_event'] = $data['event_titre'];
+$_SESSION['prix_event'] = $data['event_prix'];
+$_SESSION['type_event'] = $data['event_type'];
 
 
 echo '<div class="maingrid ficheEvent">
@@ -59,7 +63,7 @@ echo '<div class="maingrid ficheEvent">
             if ($data['my_event'] == 0){
                 echo'
             
-            <div>
+            <div><a href="./profilUser.php"></a>
             <img src="./assets/icons/orga.svg" alt="">
             <p class="organisou" >'. utf8_encode($data['event_organisateur']) .'</p>
             </div>';
@@ -94,6 +98,7 @@ echo '<div class="maingrid ficheEvent">
 
 echo'
         </section>
+
 
         <section id="desc" >
             <p>'. utf8_encode($data['event_description']) .'</p>

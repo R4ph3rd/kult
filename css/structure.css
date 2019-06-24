@@ -56,7 +56,7 @@ width:24px;
 }
 
 .maingrid > section{
-    width:95vw;
+    width:90vw;
 }
 
 #events{
@@ -215,3 +215,33 @@ width:24px;
 .listHidden{
     display: none !important;
 }
+
+@media(min-width:1000px){
+
+    .maingrid{
+        margin:0;
+        grid-template-columns:[navbar] 15% 50px [sections] 1fr 50px;
+        grid-template-rows:20px [search] 30px [cardsfav] auto [carrousel] 25vh [cardsartistes] auto [cardsnews] auto;
+        grid-row-gap:50px;
+    }
+
+    .header{
+        display:none !important;
+    }
+
+    .maingrid > section {
+        grid-column: sections;
+    }
+
+    #events{
+        grid-row: cardsfav;
+    }
+
+    #barnav{
+        display:grid !important;
+        grid-row:1 / 7;
+        grid-column: navbar;
+    }
+}
+
+

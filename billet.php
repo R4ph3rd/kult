@@ -4,15 +4,16 @@ include("database.php");
 include('functions.php');
 include('entete.php');
 
+$title_event = $_SESSION["title_event"];
 
 $ev = mysqli_query($connect, "SELECT * FROM `evenements` WHERE event_titre = '$title_event' LIMIT 1 ");
 $data = mysqli_fetch_assoc($ev) ;
 
-$_SESSION['event'] = $data ;
 $_SESSION['quelMenu']  = 'mes_participations';
 
 
-echo '
+
+echo ' 
     <div id="maingrid">
 
         <div class="header">
@@ -28,9 +29,15 @@ echo '
             <div>
                 <img src="./assets/icons/participants.svg" alt="">
                 <p>2 personnes</p>
-            </div>
+            </div>';
 
-            
+            if($_SESSION['type_event'] == 1){
+                echo'
+                <p>'. $_SESSION['prix_event'] .' €</p>
+                ';
+            }
+
+        echo'    
         </div>
     
         ';

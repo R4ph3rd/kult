@@ -11,7 +11,7 @@ if( mysqli_num_rows($a) > 0){
 
                 <a href="pages/fiche_artiste.php?name_artiste='.lien($data['artiste_name']).'">
                         <div class="img">
-                        <img src="'.$data['artiste_photo'].'" alt="'.$data['artiste_name'].' photo">
+                        <img class="imgArtiste" src="'.$data['artiste_photo'].'" alt="'.$data['artiste_name'].' photo">
                         </div>
 
                         <div>
