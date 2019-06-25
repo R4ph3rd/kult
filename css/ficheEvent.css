@@ -79,7 +79,7 @@
 
 .gridinfos > div{
     display:grid;
-    grid-template-columns:24px auto;
+    grid-template-columns:24px auto 1fr;
     grid-column-gap:30px;
     position:relative;
 }
@@ -233,7 +233,7 @@ font-weight:900;
 .eventBar{
     position:fixed;
     width:100vw;
-    height:8vh;
+    height:65px;
     bottom:0;
     left:0;
     z-index:2000;
@@ -286,12 +286,14 @@ font-weight:900;
     margin:0;
     font-family:'Roboto';
     font-size:14pt;
-    font-weight:500;
+    font-weight:400;
     color:var(--whit);
     text-transform:uppercase;
 }
 
-
+.lowcase{
+    text-transform: unset !important;
+}
 
 .rappel{
     position:relative;
@@ -378,6 +380,7 @@ font-weight:900;
     font-weight:900;
     text-align:center;
     text-transform:uppercase;
+
 }
 
 .billetEvent h4{
@@ -421,3 +424,18 @@ font-weight:900;
     text-transform:uppercase;
     transform:translateY(-15px)
 }
+
+.organisou{
+    position:relative;
+    display:inline-block;
+}
+/*
+.organisou::after{
+    position:absolute;
+    content:' ';
+    background-color:var(--raid);
+    height:2px;
+    width:100%;
+    left:0;
+    bottom:-4px;
+}*/

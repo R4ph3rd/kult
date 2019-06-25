@@ -3,7 +3,7 @@
 <img src="./assets/logo/2x/logo_main@2x.png" alt="kult logo">
 
 <div id="liens">
-    <div id="home"><a href="index.php">Acceuil</a></div>
+    <div id="home"><a href="index.php">Accueil</a></div>
     <div id="mesEvents"><a href="events&billets.php">Mes évents</a></div>
     <div id="creerEvent"><a href="createEvent.php">Créer un event</a></div>
     <div id="monAgenda"><a href="monAgenda.php">Mon agenda</a></div>

@@ -11,6 +11,12 @@ $(document).ready(function(){
         })
     }
 
+    $('#TOULOUSE').click(function(){
+        if( $(this).val()){
+            next()
+        }
+    })
+
 
     $('.header a').click(function(){
         

@@ -113,7 +113,7 @@ echo '
 
         <section id="lieu" class="notForm lieu">
 
-        <input type="text" class="textArea" name="lieu" placeholder="Entrer un lieu">
+        <input type="text" id="TOULOUSE" class="textArea" name="lieu" placeholder="Entrer un lieu">
 
         </section>
 

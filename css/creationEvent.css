@@ -2,7 +2,7 @@
   display:grid;
   justify-items:center;
   height: 94vh;
-  grid-template-rows: 24px 50px auto 50px 1fr  20px 6vh;
+  grid-template-rows: 24px 50px auto 50px 1fr  20px;
   grid-template-columns: auto 100% auto ;
   margin: 3vh 5vw;
 }

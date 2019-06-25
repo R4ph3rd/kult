@@ -57,7 +57,7 @@ echo '<div class="maingrid ficheEvent">
 
             <div>
             <img src="./assets/icons/age.svg" alt="">
-            <p>'. publicAge($data['event_public']) .'</p>
+            <p class="lowcase">'. publicAge($data['event_public']) .'</p>
             </div>';
 
             if ($data['my_event'] == 0){
@@ -82,7 +82,7 @@ echo '<div class="maingrid ficheEvent">
             echo'
             <div>
             <img src="./assets/icons/participants.svg" alt="">
-            <p>12 / 15</p>
+            <p class="lowcase">12 / 15 participants</p>
             </div>
             ';
 

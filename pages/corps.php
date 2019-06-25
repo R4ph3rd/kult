@@ -101,7 +101,13 @@ echo'
 
 echo'
     </div>
+    <div class="viens listHidden">
+    <a href="./createEvent.php"></a>
+    <p>Aucun atelier ne te convient ? Alors à toi de jouer !</p>
+    <div><p>Créer un atelier</p><img src="./assets/icons/arrow-right-circle.svg" alt=""></div>
+</div>
     </div>
 ';
 
 ?>
+

@@ -180,7 +180,10 @@ $(document).ready(function(){
                 }
             }
         }
-        if (txt.length > 1) $('.searchPage .selecteur').removeClass('listHidden')
+        if (txt.length > 1){
+             $('.searchPage .selecteur').removeClass('listHidden')
+             $('.viens').removeClass('listHidden')
+        }
     })
 })
 

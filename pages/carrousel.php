@@ -10,7 +10,7 @@ if( mysqli_num_rows($ev) > 0){
 
         echo'
             <article id="'.$n.'" class="'.afficheClass($n).'">
-                <a href="pages/fiche_event.php?title_event='.lien($data['event_titre']).'"></a>
+                <a href="fiche_event.php?title_event='.lien($data['event_titre']).'"></a>
                 
                     <img src="'.$data['event_image'].'" class="frontImg" alt="image of '.$data['event_titre'].'">
                

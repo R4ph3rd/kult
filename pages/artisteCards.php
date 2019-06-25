@@ -9,7 +9,7 @@ if( mysqli_num_rows($a) > 0){
         echo'
             <article id="card_artiste">
 
-                <a href="pages/fiche_artiste.php?name_artiste='.lien($data['artiste_name']).'">
+                <a href="fiche_artiste.php?name_artiste='.lien($data['artiste_name']).'">
                         <div class="img">
                         <img class="imgArtiste" src="'.$data['artiste_photo'].'" alt="'.$data['artiste_name'].' photo">
                         </div>
