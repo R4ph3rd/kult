@@ -91,10 +91,11 @@
 }
 
 #menu > #socials > p{
-    margin:0 0 20px 0;
+    margin:0 0 5px 0;
     text-align:center;
     font-size:0.85em;
     font-weight:500;
+    width: 80%
 }
 
 

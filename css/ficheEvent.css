@@ -360,7 +360,6 @@ font-weight:900;
 }
 
 .billetEvent{
-    margin-top:10%;
     display:grid;
     grid-area: 5 / 2 / 6 / 3;
     justify-items:center;
